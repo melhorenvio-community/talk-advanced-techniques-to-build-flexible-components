@@ -1,0 +1,22 @@
+{
+  "name": "modern-css-a-practical-guide",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.43.7",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "slidev-theme-dracula": "^0.2.0",
+    "slidev-theme-purplin": "^1.2.0"
+  },
+  "devDependencies": {
+    "@iconify-json/fluent": "^1.1.43",
+    "@iconify-json/fluent-emoji": "^1.1.15",
+    "@iconify-json/noto": "^1.1.17",
+    "@iconify-json/twemoji": "^1.1.12"
+  }
+}
