@@ -19,7 +19,7 @@
   <p align="center">
     Explorando técnicas avançadas para o desenvolvimento de componentes reutilizáveis
     <br />
-    <a href="#about-the-project">
+    <a href="#sobre-o-projeto">
       <strong>Acesse a documentação »</strong>
     </a>
   </p>
