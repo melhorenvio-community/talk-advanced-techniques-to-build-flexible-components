@@ -1,13 +1,13 @@
 ---
-title: Cascade layers
+title: Gerenciamento de estilos
 layout: section
 transition: slide-up
 ---
 
-<!-- Cascade layers -->
+<!-- Styles Management -->
 <section>
   <h1 class="section-title">
-    Cascade layers
+    Gerenciamento de estilos 
   </h1>
 </section>
 
@@ -15,7 +15,7 @@ transition: slide-up
 hideInToc: true
 ---
 
-# Cascade layers
+# Gerenciamento de estilos
 
 - Possibilitam uma melhor gestão e controle sobre a arquitetura CSS e o conhecido "efeito cascata" _(cascade)_;
 - Ajudam a evitar ou até mesmo resolver os recorrentes problemas com _especificidade_ de seletores;

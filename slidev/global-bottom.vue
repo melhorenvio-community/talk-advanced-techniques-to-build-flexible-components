@@ -1,24 +1,10 @@
 <template>
-  <BarBottom title="Leonardo Adamoli | Front-end Developer - @melhorenvio" v-motion-fade>
+  <BarBottom title="Leonardo Adamoli e Breno Pereira | Front-end Developers - @melhorenvio" v-motion-fade>
     <BarBottomItem 
-      text="@leoadamo" 
-      url="https://github.com/leoadamo"
+      text="talk-advanced-techniques-to-build-flexible-components" 
+      url="https://github.com/melhorenvio-community/talk-advanced-techniques-to-build-flexible-components"
     >
       <carbon:logo-github />
-    </BarBottomItem>
-
-    <BarBottomItem 
-      text="@_leoadamo" 
-      url="https://twitter.com/_leoadamo"
-    >
-      <carbon:logo-twitter />
-    </BarBottomItem>
-
-    <BarBottomItem 
-      text="leosadamo" 
-      url="https://www.linkedin.com/in/leosadamo/"
-    >
-      <carbon:logo-linkedin />
     </BarBottomItem>
   </BarBottom>
 </template>
