@@ -1,5 +1,5 @@
 ---
-title: CSS custom properties
+title: Apresentação do grupo
 layout: section
 transition: slide-up
 ---
@@ -7,7 +7,7 @@ transition: slide-up
 <!-- CSS custom properties -->
 <section>
   <h1 class="section-title">
-    CSS custom properties
+    Apresentação do grupo
   </h1>
 
   <small class="text-gray-600">
