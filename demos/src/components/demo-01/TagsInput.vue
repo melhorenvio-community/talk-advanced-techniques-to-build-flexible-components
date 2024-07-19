@@ -1,6 +1,9 @@
 <script setup lang="ts">
+// DEPENDENCIES
 import { ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
+
+// TYPES
 import type { ITags } from '@components/types/props';
 
 const tags = defineModel<ITags[]>();
@@ -22,7 +25,14 @@ function removeTag(index: number) {
 </script>
 
 <template>
-  <div class="tags-input">
+  <div class="flex flex-col">
+    <input
+      v-model="newTag"
+      class="mb-2 p-4 text-slate-950"
+      placeholder="Enter a tag name..."
+      @keydown.enter="addTag(newTag)"
+    >
+
     <span
       v-for="(tag, index) in tags"
       :key="`${tag}-${index}`"
@@ -37,12 +47,5 @@ function removeTag(index: number) {
         &times;
       </button>
     </span>
-
-    <input
-      v-model="newTag"
-      class="tags-input-text"
-      placeholder="Add tag..."
-      @keydown.enter="addTag(newTag)"
-    >
   </div>
 </template>
