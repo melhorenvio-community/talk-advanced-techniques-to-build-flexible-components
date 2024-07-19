@@ -97,7 +97,7 @@ Para o desenvolvimento da apresentação e das demonstrações que irão compor 
 
 - [x] Criação do repositório padrão;
 - [x] Criar e configurar os repositórios internos (slides e demos);
-- [ ] Preparar a documentação e guias de instalação;
+- [x] Preparar a documentação e guias de instalação;
 - [ ] Preparar a apresentação teórica;
 - [ ] Preparar as demonstrações práticas;
 
