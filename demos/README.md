@@ -1,9 +1,54 @@
-# Vue 3 + TypeScript + Vite
+# Vue.js Flexible Components (Demonstração)
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este guia irá auxiliar no passo a passo de instalação do projeto para que seja possível a visualização dos componentes e das *demos* em seu ambiente local.
 
-## Recommended Setup
+<br>
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## Pré-requisitos
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+* [Node.js](https://nodejs.org/en) >= 20.9.0
+* [pnpm](https://pnpm.io/) >= 9.1.0
+
+Caso você não possua o *pnpm* instalado em sua máquina, execute o comando abaixo para efetuar a sua instalação:
+
+```bash
+npm install -g pnpm
+```
+
+Para executar o projeto localmente, execute:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Pronto! Em seguida, acesse a URL http://localhost:3000 para visualizar a apresentação. :rocket:
+
+<br>
+
+## Estrutura de pastas
+
+O projeto está dividido em uma estrutura de pasta e arquivos conforme o exemplo a seguir:
+
+```
+./
+└── components/
+    └── demo-01
+        └── ... # Demo inicial (componente com padrão não flexível)
+    └── demo-02
+        └── ... # Regular (named) slots
+    └── demo-03
+        └── ... # Scoped slots
+    └── demo-04
+        └── ... # Renderless components
+└── ... # Demais pastas e arquivos
+```
+
+<br>
+
+## Referências
+
+*https://www.patterns.dev/vue/renderless-components* <br>
+*https://mokkapps.de/vue-tips/use-scoped-slots-in-a-child-component-to-provide-data-for-parent-component*<br>
+*https://vuejs.org/api/built-in-directives.html#v-on*<br>
+*https://vuejs.org/api/built-in-directives.html#v-bind*
