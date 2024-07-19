@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
-import type { ITags } from './types/props';
+import type { ITags } from '@components/types/props';
 
 const tags = defineModel<ITags[]>();
 

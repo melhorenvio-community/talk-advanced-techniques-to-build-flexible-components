@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { ITags } from '@components/TagsInput/types/props';
 import { ref } from 'vue';
+import type { ITags } from '@components/types/props';
 
 // COMPONENTS
-import TagsInput from '@components/TagsInput/TagsInput.vue';
+import TagsInput from '@components/demo-01/TagsInput.vue';
 
 const tags = ref<ITags[]>([]);
 </script>
