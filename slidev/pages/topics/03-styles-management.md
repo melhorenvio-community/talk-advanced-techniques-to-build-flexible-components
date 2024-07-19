@@ -1,13 +1,13 @@
 ---
-title: Scoped CSS
+title: Gerenciamento de estilos
 layout: section
 transition: slide-up
 ---
 
-<!-- Scoped CSS -->
+<!-- Gerenciamento de estilos -->
 <section>
   <h1 class="section-title">
-    Scoped CSS
+    Gerenciamento de estilos
   </h1>
 </section>
 
@@ -15,7 +15,7 @@ transition: slide-up
 hideInToc: true
 ---
 
-# Scoped CSS
+# Gerenciamento de estilos
 
 - Assim como os _layers_, também auxilia em um melhor controle da cascata e na forma como queremos que os estilos sejam aplicados;
 - Comportamento semelhante com o que já é implementado por alguns frameworks como _Vue_, _React_ e _Svelte_, por exemplo;
@@ -26,7 +26,7 @@ hideInToc: true
 hideInToc: true
 ---
 
-# Scoped CSS
+# Gerenciamento de estilos
 
 - Para limitar o alcance dos nossos seletores CSS por meio da definição de um escopo, fazemos uso da palavra-chave `@scope`:
 
@@ -54,7 +54,7 @@ hideInToc: true
 hideInToc: true
 ---
 
-# Scoped CSS
+# Gerenciamento de estilos
 
 - Possibilita definir estilos para o elemento _root_ do escopo, propriamente dito, por meio do seletor `:scope`;
 - Por padrão, todos os estilos definidos para os elementos de um escopo herdam esse seletor por debaixo dos panos;

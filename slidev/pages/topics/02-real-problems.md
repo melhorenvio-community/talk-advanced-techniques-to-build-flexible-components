@@ -1,5 +1,5 @@
 ---
-title: Gerenciamento de estilos
+title: Demonstração de problemas reais
 layout: section
 transition: slide-up
 ---
@@ -7,7 +7,7 @@ transition: slide-up
 <!-- Styles Management -->
 <section>
   <h1 class="section-title">
-    Gerenciamento de estilos 
+    Demonstração de problemas reais
   </h1>
 </section>
 
@@ -15,7 +15,7 @@ transition: slide-up
 hideInToc: true
 ---
 
-# Gerenciamento de estilos
+# Demonstração de problemas reais
 
 - Possibilitam uma melhor gestão e controle sobre a arquitetura CSS e o conhecido "efeito cascata" _(cascade)_;
 - Ajudam a evitar ou até mesmo resolver os recorrentes problemas com _especificidade_ de seletores;

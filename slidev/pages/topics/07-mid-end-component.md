@@ -1,13 +1,13 @@
 ---
-title: Individual transform properties
+title: Demonstração de um componente <i>mid-end</i>
 layout: section
 transition: slide-up
 ---
 
-<!-- Individual transform properties -->
+<!-- Demonstração de um componente mid-end -->
 <section>
   <h1 class="section-title">
-    Individual transform properties
+    Demonstração de um componente mid-end
   </h1>
 </section>
 
@@ -15,7 +15,7 @@ transition: slide-up
 hideInToc: true
 ---
 
-# Individual transform properties
+# Demonstração de um componente mid-end
 
 - Proporcionam uma maior flexibilidade no código;
 - Evitam repetições, uma vez que cada propriedade pode ser modificada individualmente;
@@ -40,7 +40,7 @@ Utilizando a propriedade `transform` como estamos acostumados:
 hideInToc: true
 ---
 
-# Individual transform properties
+# Demonstração de um componente mid-end
 
 Utilizando _individual transform properties_:
 
@@ -60,7 +60,7 @@ Utilizando _individual transform properties_:
 hideInToc: true
 ---
 
-# Individual transform properties
+# Demonstração de um componente mid-end
 
 - Diferentemente das regras declaradas com a propriedade `transform` - onde as propriedades são aplicadas de acordo com a ordem declarada - aqui a ordem não importa, ou seja, declarando elas assim:
 

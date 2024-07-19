@@ -17,6 +17,9 @@ importers:
       '@slidev/theme-seriph':
         specifier: latest
         version: 0.25.0
+      prompts:
+        specifier: ^2.4.2
+        version: 2.4.2
       slidev-theme-dracula:
         specifier: ^0.2.0
         version: 0.2.0
@@ -2579,9 +2582,11 @@ packages:
 
   shikiji-compat@0.6.13:
     resolution: {integrity: sha512-PS6kUCD6a1+24x66HVVEDXPO+bxNXcN1dxCJaN45ZUZ0LHM2DWXF4w4rhQ/GmNrTUpvM/gMamOMsX6r6bmsxxQ==}
+    deprecated: Shikiji is merged back to Shiki v1.0, please migrate over to get the latest updates
 
   shikiji@0.6.13:
     resolution: {integrity: sha512-4T7X39csvhT0p7GDnq9vysWddf2b6BeioiN3Ymhnt3xcy9tXmDcnsEFVxX18Z4YcQgEE/w48dLJ4pPPUcG9KkA==}
+    deprecated: Shikiji is merged back to Shiki v1.0, please migrate over to get the latest updates
 
   signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
