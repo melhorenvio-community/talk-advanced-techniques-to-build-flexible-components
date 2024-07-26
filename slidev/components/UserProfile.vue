@@ -12,7 +12,7 @@
     <img 
       :src="user.thumbnail" 
       :alt="`${user.name} profile picture`"
-      class="w-10 h-10 rounded-full" 
+      class="w-40 h-40 rounded-full" 
     >
 
     <div class="font-medium">
