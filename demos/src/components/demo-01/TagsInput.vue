@@ -1,13 +1,26 @@
 <script setup lang="ts">
+// DEPENDENCIES
 import { ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
-import type { ITags } from './types/props';
+
+// TYPES
+import type { ITags } from '@components/types/props';
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 const tags = defineModel<ITags[]>();
 
 const newTag = ref('');
 
 function addTag(text: string) {
+  const tagAlreadyExists = tags.value?.find(tag => tag.text === text);
+
+  if (newTag.value.length === 0 || tagAlreadyExists) {
+    return;
+  }
+
   tags.value?.push({
     id: uuidv4(),
     text,
@@ -19,19 +32,24 @@ function addTag(text: string) {
 function removeTag(index: number) {
   tags.value?.splice(index, 1);
 }
+
+function handleTagBackspace() {
+  if (newTag.value.length === 0) {
+    tags.value?.slice(0, -1);
+  }
+}
 </script>
 
 <template>
-  <div class="tags-input">
+  <div class="w-full h-auto">
     <span
       v-for="(tag, index) in tags"
       :key="`${tag}-${index}`"
     >
-      <span>{{ tag }}</span>
+      <span>{{ tag.text }}</span>
 
       <button
         type="button"
-        class="tags-input-remove"
         @click="removeTag(index)"
       >
         &times;
@@ -40,9 +58,10 @@ function removeTag(index: number) {
 
     <input
       v-model="newTag"
-      class="tags-input-text"
-      placeholder="Add tag..."
-      @keydown.enter="addTag(newTag)"
+      v-bind="$attrs"
+      class="block w-full p-2 border-2"
+      @keydown.backspace="handleTagBackspace"
+      @keydown.enter.prevent="addTag(newTag)"
     >
   </div>
 </template>

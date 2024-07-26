@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-auto bg-repeat bg-left-top;
+  background-image: url("../src/assets/peak_background.svg");
+}
