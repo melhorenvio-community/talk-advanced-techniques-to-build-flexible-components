@@ -4,7 +4,7 @@ import { computed, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
-import type { ITags } from '@components/types/props';
+import type { ITags } from '@/components/TagsInput/types';
 
 defineOptions({
   inheritAttrs: false,
@@ -16,7 +16,7 @@ const newTag = ref('');
 
 const placeholder = computed(() => tags.value?.length ? '' : 'Type a tag name...');
 
-function addTag(text: string) {
+function addTag(text: string): void {
   const tagAlreadyExists = tags.value?.find(tag => tag.text === text);
 
   if (newTag.value.length === 0 || tagAlreadyExists) {
@@ -31,14 +31,20 @@ function addTag(text: string) {
   newTag.value = '';
 }
 
-function removeTag(index: number) {
-  tags.value?.splice(index, 1);
-}
-
-function handleTagBackspace() {
-  if (newTag.value.length === 0) {
-    tags.value?.pop();
+function removeTag(id?: string): void {
+  if (!tags.value) {
+    return;
   }
+
+  if (!id && newTag.value.length === 0) {
+    tags.value.pop();
+
+    return;
+  }
+
+  const target = tags.value.findIndex(tag => tag.id === id);
+
+  tags.value.splice(target, 1);
 }
 </script>
 
@@ -54,7 +60,7 @@ function handleTagBackspace() {
       appear
     >
       <span
-        v-for="(tag, index) in tags"
+        v-for="tag in tags"
         :key="tag.id"
         class="flex gap-2 px-3 py-1 rounded-sm bg-purple-500 text-white"
       >
@@ -62,7 +68,7 @@ function handleTagBackspace() {
 
         <button
           type="button"
-          @click="removeTag(index)"
+          @click="removeTag(tag.id)"
         >
           &times;
         </button>
@@ -74,7 +80,7 @@ function handleTagBackspace() {
       v-bind="$attrs"
       :placeholder
       class="w-auto h-8 outline-none"
-      @keydown.backspace="handleTagBackspace"
+      @keydown.backspace="removeTag()"
       @keydown.enter.prevent="addTag(newTag)"
     >
   </label>
