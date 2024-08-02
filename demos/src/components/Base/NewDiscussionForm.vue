@@ -2,18 +2,18 @@
 // DEPENDENCIES
 import { ref } from 'vue';
 
-// TYPES
-import type { ITags } from '@components/types/props';
-
 // COMPONENTS
-import TagsInput from '@components/demo-01/TagsInput.vue';
+import TagsInput from '@components/TagsInput/TagsInput.vue';
+
+// TYPES
+import type { ITags } from '@components/TagsInput/types';
 
 const tags = ref<ITags[]>([]);
 </script>
 
 <template>
   <div class="w-[800px] h-auto p-10 bg-white rounded-xl">
-    <h3 class="font-bold text-xl text-center text-[#222329]">
+    <h3 class="font-bold text-xl text-center text-gray-950">
       Start a New Discussion
     </h3>
 
@@ -49,7 +49,7 @@ const tags = ref<ITags[]>([]);
         <select
           id="category"
           name="category"
-          class="block p-2 pr-4 border-2 text-[#222329]"
+          class="block p-2 pr-4 border-2 text-gray-950"
         >
           <option
             disabled
@@ -92,11 +92,27 @@ const tags = ref<ITags[]>([]);
           id="tags"
           v-model="tags"
           name="tags"
-          placeholder="Type a tag name..."
+          autocomplete="off"
         />
       </fieldset>
 
-      <button class="col-start-2 flex items-center justify-center w-full max-w-[200px] ml-auto p-2 rounded-sm font-bold  text-white bg-purple-500 hover:bg-purple-600 transition-all">
+      <button
+        class="
+          col-start-2
+          flex
+          items-center
+          justify-center
+          w-full
+          max-w-[200px]
+          ml-auto
+          p-2
+          rounded-sm
+          font-bold
+          text-white
+          bg-purple-500
+          hover:bg-purple-600 transition-all
+        "
+      >
         Start Discussion
       </button>
     </form>

@@ -1,0 +1,8 @@
+/* CORE */
+@import './core/global';
+@import './core/transitions';
+
+/* TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
