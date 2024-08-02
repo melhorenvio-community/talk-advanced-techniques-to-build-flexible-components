@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // DEPENDENCIES
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
@@ -13,6 +13,8 @@ defineOptions({
 const tags = defineModel<ITags[]>();
 
 const newTag = ref('');
+
+const placeholder = computed(() => tags.value?.length ? '' : 'Type a tag name...');
 
 function addTag(text: string) {
   const tagAlreadyExists = tags.value?.find(tag => tag.text === text);
@@ -41,27 +43,39 @@ function handleTagBackspace() {
 </script>
 
 <template>
-  <div class="w-full h-auto">
-    <span
-      v-for="(tag, index) in tags"
-      :key="`${tag}-${index}`"
+  <label
+    :for="($attrs.name as string)"
+    class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
+  >
+    <transition-group
+      name="fade"
+      tag="div"
+      class="flex items-center flex-wrap gap-2"
+      appear
     >
-      <span>{{ tag.text }}</span>
-
-      <button
-        type="button"
-        @click="removeTag(index)"
+      <span
+        v-for="(tag, index) in tags"
+        :key="tag.id"
+        class="flex gap-2 px-3 py-1 rounded-sm bg-purple-500 text-white"
       >
-        &times;
-      </button>
-    </span>
+        {{ tag.text }}
+
+        <button
+          type="button"
+          @click="removeTag(index)"
+        >
+          &times;
+        </button>
+      </span>
+    </transition-group>
 
     <input
       v-model="newTag"
       v-bind="$attrs"
-      class="block w-full p-2 border-2"
+      :placeholder
+      class="w-auto h-8 outline-none"
       @keydown.backspace="handleTagBackspace"
       @keydown.enter.prevent="addTag(newTag)"
     >
-  </div>
+  </label>
 </template>

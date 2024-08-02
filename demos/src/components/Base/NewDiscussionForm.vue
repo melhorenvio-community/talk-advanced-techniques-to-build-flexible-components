@@ -92,11 +92,27 @@ const tags = ref<ITags[]>([]);
           id="tags"
           v-model="tags"
           name="tags"
-          placeholder="Type a tag name..."
+          autocomplete="off"
         />
       </fieldset>
 
-      <button class="col-start-2 flex items-center justify-center w-full max-w-[200px] ml-auto p-2 rounded-sm font-bold  text-white bg-purple-500 hover:bg-purple-600 transition-all">
+      <button
+        class="
+          col-start-2
+          flex
+          items-center
+          justify-center
+          w-full
+          max-w-[200px]
+          ml-auto
+          p-2
+          rounded-sm
+          font-bold
+          text-white
+          bg-purple-500
+          hover:bg-purple-600 transition-all
+        "
+      >
         Start Discussion
       </button>
     </form>
