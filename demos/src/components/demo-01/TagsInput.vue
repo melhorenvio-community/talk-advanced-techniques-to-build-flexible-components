@@ -37,7 +37,7 @@ function removeTag(index: number) {
 
 function handleTagBackspace() {
   if (newTag.value.length === 0) {
-    tags.value?.slice(0, -1);
+    tags.value?.pop();
   }
 }
 </script>
