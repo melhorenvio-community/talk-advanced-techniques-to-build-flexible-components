@@ -8,7 +8,14 @@ import CarbonLogoGithub from '~icons/carbon/logo-github';
 <template>
   <main class="w-full max-w-[800px] h-screen flex flex-col gap-8 mx-auto py-20">
     <section class="w-full h-full grid place-content-center">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <transition
+          name="fade"
+          appear
+        >
+          <component :is="Component" />
+        </transition>
+      </RouterView>
     </section>
   </main>
 

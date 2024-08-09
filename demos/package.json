@@ -17,6 +17,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.17.0",
     "@iconify-json/carbon": "^1.1.37",
+    "@iconify-json/iconamoon": "^1.1.5",
+    "@iconify-json/ion": "^1.1.19",
     "@iconify-json/twemoji": "^1.1.16",
     "@types/node": "^20.14.7",
     "@types/uuid": "^10.0.0",

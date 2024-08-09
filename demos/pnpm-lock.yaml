@@ -21,6 +21,12 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.1.37
         version: 1.1.37
+      '@iconify-json/iconamoon':
+        specifier: ^1.1.5
+        version: 1.1.5
+      '@iconify-json/ion':
+        specifier: ^1.1.19
+        version: 1.1.19
       '@iconify-json/twemoji':
         specifier: ^1.1.16
         version: 1.1.16
@@ -333,6 +339,12 @@ packages:
 
   '@iconify-json/carbon@1.1.37':
     resolution: {integrity: sha512-Hj9oZtRmN63yt29YovqgqOJQhaoVMNMTkFLT3HKAJm4HjvI405Juez5UfdysYmLjF708U7gJNx4U6K1k5+fTBw==, tarball: https://registry.npmjs.org/@iconify-json/carbon/-/carbon-1.1.37.tgz}
+
+  '@iconify-json/iconamoon@1.1.5':
+    resolution: {integrity: sha512-BT1VVfQCjCoigDQ7vLHa3gPf9aT3c4ErZ9VWxvqeDD1iTCbEhP+rl6THTmHcLVluH52stc9PcwNChuYVLna9+g==, tarball: https://registry.npmjs.org/@iconify-json/iconamoon/-/iconamoon-1.1.5.tgz}
+
+  '@iconify-json/ion@1.1.19':
+    resolution: {integrity: sha512-ijYnInYvTsyw/H9WrVlyptiryogi95BhLSKLk/lX8lshctoK7Gaw21Rlatn7qk4RJPNLQNIy/vT1N9trA5Creg==, tarball: https://registry.npmjs.org/@iconify-json/ion/-/ion-1.1.19.tgz}
 
   '@iconify-json/twemoji@1.1.16':
     resolution: {integrity: sha512-uAUlu4l7UZXDX2W7kfwttsObf76t+myPRxgIfU6IL1jQsbQTG/ouC2NBhrgBI8iq6eCweDhLuBorCdMlDkE9fQ==, tarball: https://registry.npmjs.org/@iconify-json/twemoji/-/twemoji-1.1.16.tgz}
@@ -2294,6 +2306,14 @@ snapshots:
   '@humanwhocodes/retry@0.3.0': {}
 
   '@iconify-json/carbon@1.1.37':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/iconamoon@1.1.5':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ion@1.1.19':
     dependencies:
       '@iconify/types': 2.0.0
 

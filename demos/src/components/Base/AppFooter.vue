@@ -21,7 +21,7 @@ defineProps({
       left-0
       px-4
       py-2
-      font-normal
+      font-semibold
       text-md
       z-50
       bg-purple-500

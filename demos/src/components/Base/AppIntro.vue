@@ -3,15 +3,12 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 
+// COMPONENTS
+import LeftArrowCurvingRight from '~icons/twemoji/left-arrow-curving-right';
+
 const router = useRouter();
 
 const demoRoutes = computed(() => router.getRoutes().filter(r => String(r.name).includes('demo')));
-
-function formatDemoTitle(index: number) {
-  const prefix = String(index + 1).padStart(2, '0');
-
-  return `↪ Demo #${prefix}`;
-}
 </script>
 
 <template>
@@ -22,12 +19,14 @@ function formatDemoTitle(index: number) {
 
     <nav class="flex items-center gap-4 text-xl text-white font-extralight">
       <router-link
-        v-for="(route, index) in demoRoutes"
+        v-for="route in demoRoutes"
         :key="route.name"
         :to="route.path"
-        class="hover:text-[#00A6ED] transition-all"
+        class="inline-flex hover:text-boston-blue transition-all"
       >
-        {{ formatDemoTitle(index) }}
+        <span class="inline-flex items-center gap-2">
+          <left-arrow-curving-right /> {{ route.meta.title }}
+        </span>
       </router-link>
     </nav>
   </div>
