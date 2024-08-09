@@ -12,9 +12,13 @@
     "paths": {
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@views/*": ["./src/views/*"]
     },
     "resolveJsonModule": true,
+    "types": [
+      "unplugin-icons/types/vue"
+    ],
     "allowImportingTsExtensions": true,
 
     /* Linting */

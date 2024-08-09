@@ -4,7 +4,7 @@ import { computed, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
-import type { ITags } from '@/components/TagsInput/types';
+import type { ITags } from '@components/TagsInput/types';
 
 defineOptions({
   inheritAttrs: false,
@@ -32,7 +32,7 @@ function addTag(text: string): void {
 }
 
 function removeTag(id?: string): void {
-  if (!tags.value) {
+  if (newTag.value.length || !tags.value) {
     return;
   }
 
