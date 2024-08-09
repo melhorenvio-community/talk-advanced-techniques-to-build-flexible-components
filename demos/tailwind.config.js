@@ -5,7 +5,11 @@ export default {
     './src/**/*.{vue,js,ts}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'boston-blue': '#3B88C3',
+      },
+    },
   },
   plugins: [],
 };

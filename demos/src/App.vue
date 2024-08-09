@@ -1,22 +1,30 @@
 <script setup lang="ts">
 // COMPONENTS
-import NewDiscussionForm from '@/components/Base/NewDiscussionForm.vue';
+import AppFooter from '@components/Base/AppFooter.vue';
+import AppFooterItem from '@components/Base/AppFooterItem.vue';
+import CarbonLogoGithub from '~icons/carbon/logo-github';
 </script>
 
 <template>
   <main class="w-full max-w-[800px] h-screen flex flex-col gap-8 mx-auto py-20">
-    <section class="flex flex-col gap-8 text-white">
-      <h1 class="max-w-[750px] text-4xl font-bold">
-        Técnicas avançadas para o desenvolvimento de componentes flexíveis:
-      </h1>
-
-      <h2 class="text-2xl font-extralight">
-        ↪ Demo #01
-      </h2>
-    </section>
-
     <section class="w-full h-full grid place-content-center">
-      <new-discussion-form />
+      <RouterView v-slot="{ Component }">
+        <transition
+          name="fade"
+          appear
+        >
+          <component :is="Component" />
+        </transition>
+      </RouterView>
     </section>
   </main>
+
+  <app-footer title="Leonardo Adamoli e Breno Pereira | Front-end Developers - @melhorenvio">
+    <app-footer-item
+      text="talk-advanced-techniques-to-build-flexible-components"
+      url="https://github.com/melhorenvio-community/talk-advanced-techniques-to-build-flexible-components"
+    >
+      <carbon-logo-github />
+    </app-footer-item>
+  </app-footer>
 </template>

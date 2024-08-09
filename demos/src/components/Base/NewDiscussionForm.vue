@@ -6,9 +6,9 @@ import { ref } from 'vue';
 import TagsInput from '@components/TagsInput/TagsInput.vue';
 
 // TYPES
-import type { ITags } from '@components/TagsInput/types';
+import type { ITagsModel } from '@components/TagsInput/types';
 
-const tags = ref<ITags[]>([]);
+const tags = ref<ITagsModel[]>([]);
 </script>
 
 <template>

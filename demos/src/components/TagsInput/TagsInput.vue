@@ -4,13 +4,18 @@ import { computed, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
-import type { ITags } from '@/components/TagsInput/types';
+import type { ITagsModel, ITagsProps } from '@components/TagsInput/types';
+
+// COMPONENTS
+import TrashThin from '~icons/iconamoon/trash-thin';
 
 defineOptions({
   inheritAttrs: false,
 });
 
-const tags = defineModel<ITags[]>();
+defineProps<ITagsProps>();
+
+const tags = defineModel<ITagsModel[]>();
 
 const newTag = ref('');
 
@@ -32,7 +37,7 @@ function addTag(text: string): void {
 }
 
 function removeTag(id?: string): void {
-  if (!tags.value) {
+  if (newTag.value.length || !tags.value) {
     return;
   }
 
@@ -70,7 +75,7 @@ function removeTag(id?: string): void {
           type="button"
           @click="removeTag(tag.id)"
         >
-          &times;
+          <trash-thin />
         </button>
       </span>
     </transition-group>

@@ -1,8 +1,12 @@
-export interface ITags {
+export interface ITagsModel {
   id: string;
   text: string;
 }
-
-export interface ITagsInputProps {
-  tags: ITags[];
+export interface ITagsInputModel {
+  tags: ITagsModel[];
 };
+
+export interface ITagsProps {
+  theme?: 'light' | 'dark';
+  icon?: string;
+}
