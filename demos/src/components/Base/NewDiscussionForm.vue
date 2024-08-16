@@ -2,6 +2,9 @@
 // TYPES
 import type { ITagsModel } from '@components/TagsInput/types';
 
+// COMPONENTS
+import CloseFill from '~icons/iconamoon/close-fill';
+
 const tags = ref<ITagsModel[]>([]);
 </script>
 
@@ -87,6 +90,7 @@ const tags = ref<ITagsModel[]>([]);
           v-model="tags"
           name="tags"
           autocomplete="off"
+          :icon="CloseFill"
         />
       </fieldset>
 
