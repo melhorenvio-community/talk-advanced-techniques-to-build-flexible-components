@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // DEPENDENCIES
-import { computed, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
@@ -13,7 +12,10 @@ defineOptions({
   inheritAttrs: false,
 });
 
-defineProps<ITagsProps>();
+const props = withDefaults(defineProps<ITagsProps>(), {
+  theme: 'dark',
+  icon: TrashThin,
+});
 
 const tags = defineModel<ITagsModel[]>();
 
@@ -75,7 +77,7 @@ function removeTag(id?: string): void {
           type="button"
           @click="removeTag(tag.id)"
         >
-          <trash-thin />
+          <component :is="props.icon" />
         </button>
       </span>
     </transition-group>

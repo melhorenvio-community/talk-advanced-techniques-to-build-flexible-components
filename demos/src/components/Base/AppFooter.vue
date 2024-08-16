@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// COMPONENTS
-import TwemojiFlagBrazil from '~icons/twemoji/flag-brazil';
-
 defineProps({
   title: {
     type: String,

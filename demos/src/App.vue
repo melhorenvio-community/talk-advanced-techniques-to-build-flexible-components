@@ -1,10 +1,3 @@
-<script setup lang="ts">
-// COMPONENTS
-import AppFooter from '@components/Base/AppFooter.vue';
-import AppFooterItem from '@components/Base/AppFooterItem.vue';
-import CarbonLogoGithub from '~icons/carbon/logo-github';
-</script>
-
 <template>
   <main class="w-full max-w-[800px] h-screen flex flex-col gap-8 mx-auto py-20">
     <section class="w-full h-full grid place-content-center">

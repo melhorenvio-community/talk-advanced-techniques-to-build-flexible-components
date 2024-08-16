@@ -1,10 +1,4 @@
 <script setup lang="ts">
-// DEPENDENCIES
-import { ref } from 'vue';
-
-// COMPONENTS
-import TagsInput from '@components/TagsInput/TagsInput.vue';
-
 // TYPES
 import type { ITagsModel } from '@components/TagsInput/types';
 
