@@ -104,6 +104,37 @@ Graças a eficiência de toda a equipe não temos problemas de `v-html` problem�
 
 ---
 hideInToc: true
+transition: slide-up
 ---
 
 # Múltiplo binding de props 🧬
+
+Ter um componente cheio de props é ruim, mas já imaginou utiliza-los na prática? Com o uso de `v-bind` juntamente ao `prop-explosion` pode prejudicar demais a sua aplicação;
+
+### Principais causas
+1. **Manutenção Difícil:** Com muitas props sendo passadas, o código pode se tornar difícil de manter.
+2. **Legibilidade Reduzida:** Um grande número de props pode tornar o código menos legível e mais difícil de entender rapidamente.
+3. **Desempenho:** Passar muitas props pode impactar negativamente o desempenho, especialmente se as props são atualizadas com frequência.
+4. **Reusabilidade do Componente:** Componentes com muitas props tendem a ser menos reutilizáveis.
+
+---
+hideInToc: true
+---
+
+# Múltiplo binding de props 🧬
+
+Lembra do `shipmentTag.vue`? Então, este mesmo arquivo fará parte desta etapa.
+
+```
+<shipmenTag 
+    :id="tag.id"
+    :protocol="tag.protocol"
+    :shipping-company="tag.service.company.name"
+    :company-id="String(tag.service.company.id || '')"
+    :service-id="String(tag.service_id || '')"
+    :contract="tag.contract"
+    ...
+/>
+```
+
+Imagina ter que utilizar todas as props dessa aplicação e ainda aplicar `v-bind` em cada item de um arquivo já precário. Podemos melhorar isso, não?
