@@ -5,6 +5,12 @@ export default {
     './src/**/*.{vue,js,ts}',
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        'Nunito Sans',
+        'sans-serif',
+      ],
+    },
     extend: {
       colors: {
         'boston-blue': '#3B88C3',

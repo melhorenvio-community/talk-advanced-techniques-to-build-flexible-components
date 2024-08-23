@@ -17,15 +17,15 @@ defineProps({
       bottom-0
       left-0
       px-4
-      py-2
+      py-0.5
       font-semibold
-      text-md
+      text-lg
       z-50
-      bg-purple-500
-      text-gray-800
+      bg-purple-400
+      text-gray-700
     "
   >
-    <div class="flex items-center gap-2 w-1/2 text-left">
+    <div class="flex items-center gap-2 w-1/2 text-left ">
       {{ title }}
 
       <slot name="flag">

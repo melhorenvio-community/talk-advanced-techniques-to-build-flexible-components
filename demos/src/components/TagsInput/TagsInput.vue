@@ -23,7 +23,7 @@ const newTag = ref('');
 
 const placeholder = computed(() => tags.value?.length ? '' : 'Type a tag name...');
 
-const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-500 text-white' : 'bg-purple-200 text-purple-400');
+const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
 
 function addTag(text: string): void {
   const tagAlreadyExists = tags.value?.find(tag => tag.text === text);
