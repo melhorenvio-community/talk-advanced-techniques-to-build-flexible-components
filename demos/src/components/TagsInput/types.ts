@@ -5,7 +5,7 @@ export type Layout = 'top' | 'inner' | 'bottom';
 
 export type Theme = 'light' | 'dark';
 
-export type iconPosition = 'left' | 'right';
+export type IconPosition = 'left' | 'right';
 
 export interface TagsModel {
   id: string;
@@ -20,5 +20,5 @@ export interface TagsProps {
   layout?: Layout;
   theme?: Theme;
   icon?: FunctionalComponent;
-  iconPosition?: iconPosition;
+  iconPosition?: IconPosition;
 };
