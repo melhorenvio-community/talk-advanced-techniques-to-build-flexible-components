@@ -62,6 +62,7 @@ function removeTag(id?: string): void {
 <template>
   <template v-if="props.layout === 'top'">
     <transition-group
+      v-if="tags?.length"
       name="fade"
       tag="div"
       class="flex items-center flex-wrap gap-2"
@@ -71,7 +72,7 @@ function removeTag(id?: string): void {
         v-for="tag in tags"
         :key="tag.id"
         :class="themeClasses"
-        class="flex gap-2 px-3 py-1 rounded-sm"
+        class="flex gap-2 px-3 py-1 rounded-sm select-none"
       >
         <template v-if="props.iconPosition === 'left'">
           <button
@@ -118,6 +119,7 @@ function removeTag(id?: string): void {
       class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
     >
       <transition-group
+        v-if="tags?.length"
         name="fade"
         tag="div"
         class="flex items-center flex-wrap gap-2"
@@ -127,7 +129,7 @@ function removeTag(id?: string): void {
           v-for="tag in tags"
           :key="tag.id"
           :class="themeClasses"
-          class="flex gap-2 px-3 py-1 rounded-sm"
+          class="flex gap-2 px-3 py-1 rounded-sm select-none"
         >
           <template v-if="props.iconPosition === 'left'">
             <button
@@ -180,6 +182,7 @@ function removeTag(id?: string): void {
     </label>
 
     <transition-group
+      v-if="tags?.length"
       name="fade"
       tag="div"
       class="flex items-center flex-wrap gap-2"
@@ -189,7 +192,7 @@ function removeTag(id?: string): void {
         v-for="tag in tags"
         :key="tag.id"
         :class="themeClasses"
-        class="flex gap-2 px-3 py-1 rounded-sm"
+        class="flex gap-2 px-3 py-1 rounded-sm select-none"
       >
         <template v-if="props.iconPosition === 'left'">
           <button
