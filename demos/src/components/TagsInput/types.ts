@@ -1,7 +1,11 @@
 // TYPES
 import type { FunctionalComponent } from 'vue';
 
+export type Layout = 'top' | 'inner' | 'bottom';
+
 export type Theme = 'light' | 'dark';
+
+export type iconPosition = 'left' | 'right';
 
 export interface TagsModel {
   id: string;
@@ -13,6 +17,8 @@ export interface TagsInputModel {
 };
 
 export interface TagsProps {
+  layout?: Layout;
   theme?: Theme;
   icon?: FunctionalComponent;
+  iconPosition?: iconPosition;
 };

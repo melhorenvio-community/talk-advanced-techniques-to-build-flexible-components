@@ -3,7 +3,7 @@
 import type { TagsModel } from '@components/TagsInput/types';
 
 // COMPONENTS
-import CloseFill from '~icons/iconamoon/close-fill';
+// import TrashThin from '~icons/iconamoon/trash-thin';
 
 const tags = ref<TagsModel[]>([]);
 </script>
@@ -90,7 +90,6 @@ const tags = ref<TagsModel[]>([]);
           v-model="tags"
           name="tags"
           autocomplete="off"
-          :icon="CloseFill"
         />
       </fieldset>
 

@@ -6,15 +6,17 @@ import { v4 as uuidv4 } from 'uuid';
 import type { TagsModel, TagsProps } from '@components/TagsInput/types';
 
 // COMPONENTS
-import TrashThin from '~icons/iconamoon/trash-thin';
+import CloseFill from '~icons/iconamoon/close-fill';
 
 defineOptions({
   inheritAttrs: false,
 });
 
 const props = withDefaults(defineProps<TagsProps>(), {
+  layout: 'inner',
   theme: 'dark',
-  icon: TrashThin,
+  icon: CloseFill,
+  iconPosition: 'right',
 });
 
 const tags = defineModel<TagsModel[]>();
@@ -58,10 +60,7 @@ function removeTag(id?: string): void {
 </script>
 
 <template>
-  <label
-    :for="($attrs.name as string)"
-    class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
-  >
+  <template v-if="props.layout === 'top'">
     <transition-group
       name="fade"
       tag="div"
@@ -74,24 +73,146 @@ function removeTag(id?: string): void {
         :class="themeClasses"
         class="flex gap-2 px-3 py-1 rounded-sm"
       >
-        {{ tag.text }}
+        <template v-if="props.iconPosition === 'left'">
+          <button
+            type="button"
+            @click="removeTag(tag.id)"
+          >
+            <component :is="props.icon" />
+          </button>
 
-        <button
-          type="button"
-          @click="removeTag(tag.id)"
-        >
-          <component :is="props.icon" />
-        </button>
+          {{ tag.text }}
+        </template>
+
+        <template v-else>
+          {{ tag.text }}
+
+          <button
+            type="button"
+            @click="removeTag(tag.id)"
+          >
+            <component :is="props.icon" />
+          </button>
+        </template>
       </span>
     </transition-group>
 
-    <input
-      v-model="newTag"
-      v-bind="$attrs"
-      :placeholder
-      class="w-auto h-8 outline-none"
-      @keydown.backspace="removeTag()"
-      @keydown.enter.prevent="addTag(newTag)"
+    <label
+      :for="($attrs.name as string)"
+      class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
     >
-  </label>
+      <input
+        v-model="newTag"
+        v-bind="$attrs"
+        :placeholder
+        class="w-auto h-8 outline-none"
+        @keydown.backspace="removeTag()"
+        @keydown.enter.prevent="addTag(newTag)"
+      >
+    </label>
+  </template>
+
+  <template v-else-if="props.layout === 'inner'">
+    <label
+      :for="($attrs.name as string)"
+      class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
+    >
+      <transition-group
+        name="fade"
+        tag="div"
+        class="flex items-center flex-wrap gap-2"
+        appear
+      >
+        <span
+          v-for="tag in tags"
+          :key="tag.id"
+          :class="themeClasses"
+          class="flex gap-2 px-3 py-1 rounded-sm"
+        >
+          <template v-if="props.iconPosition === 'left'">
+            <button
+              type="button"
+              @click="removeTag(tag.id)"
+            >
+              <component :is="props.icon" />
+            </button>
+
+            {{ tag.text }}
+          </template>
+
+          <template v-else>
+            {{ tag.text }}
+
+            <button
+              type="button"
+              @click="removeTag(tag.id)"
+            >
+              <component :is="props.icon" />
+            </button>
+          </template>
+        </span>
+      </transition-group>
+
+      <input
+        v-model="newTag"
+        v-bind="$attrs"
+        :placeholder
+        class="w-auto h-8 outline-none"
+        @keydown.backspace="removeTag()"
+        @keydown.enter.prevent="addTag(newTag)"
+      >
+    </label>
+  </template>
+
+  <template v-else>
+    <label
+      :for="($attrs.name as string)"
+      class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
+    >
+      <input
+        v-model="newTag"
+        v-bind="$attrs"
+        :placeholder
+        class="w-auto h-8 outline-none"
+        @keydown.backspace="removeTag()"
+        @keydown.enter.prevent="addTag(newTag)"
+      >
+    </label>
+
+    <transition-group
+      name="fade"
+      tag="div"
+      class="flex items-center flex-wrap gap-2"
+      appear
+    >
+      <span
+        v-for="tag in tags"
+        :key="tag.id"
+        :class="themeClasses"
+        class="flex gap-2 px-3 py-1 rounded-sm"
+      >
+        <template v-if="props.iconPosition === 'left'">
+          <button
+            type="button"
+            @click="removeTag(tag.id)"
+          >
+            <component :is="props.icon" />
+          </button>
+
+          {{ tag.text }}
+        </template>
+
+        <template v-else>
+          {{ tag.text }}
+
+          <button
+            type="button"
+            @click="removeTag(tag.id)"
+          >
+            <component :is="props.icon" />
+          </button>
+        </template>
+      </span>
+    </transition-group>
+  </template>
 </template>
