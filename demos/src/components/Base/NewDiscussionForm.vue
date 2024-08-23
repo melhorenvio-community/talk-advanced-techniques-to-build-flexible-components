@@ -3,7 +3,7 @@
 import type { TagsModel } from '@components/TagsInput/types';
 
 // COMPONENTS
-// import TrashThin from '~icons/iconamoon/trash-thin';
+// import Trash from '~icons/iconamoon/trash';
 
 const tags = ref<TagsModel[]>([]);
 </script>

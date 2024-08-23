@@ -98,7 +98,7 @@ function removeTag(id?: string): void {
     </transition-group>
 
     <label
-      :for="($attrs.name as string)"
+      :for="($attrs.id as string)"
       class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
     >
       <input
@@ -114,7 +114,7 @@ function removeTag(id?: string): void {
 
   <template v-else-if="props.layout === 'inner'">
     <label
-      :for="($attrs.name as string)"
+      :for="($attrs.id as string)"
       class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
     >
       <transition-group
@@ -166,7 +166,7 @@ function removeTag(id?: string): void {
 
   <template v-else>
     <label
-      :for="($attrs.name as string)"
+      :for="($attrs.id as string)"
       class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
     >
       <input
