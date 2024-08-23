@@ -56,7 +56,7 @@ Para consultar o repositório das __demos__, [clique aqui](./slidev/README.md).<
 ---
 
 Para visualizar a apresentação em __slides__, [clique aqui](https://slides-flexible-components.netlify.app/1).<br>
-Para consultar as __demos__, [clique aqui]([./slidev/README.md](https://demos-flexible-components.netlify.app/)).
+Para consultar as __demos__, [clique aqui](https://demos-flexible-components.netlify.app/).
 
 <p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
 
