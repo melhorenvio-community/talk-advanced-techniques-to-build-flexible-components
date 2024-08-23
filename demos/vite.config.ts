@@ -1,7 +1,10 @@
 import { URL, fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import Vue from '@vitejs/plugin-vue';
 import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
 
 export default defineConfig({
   resolve: {
@@ -18,7 +21,29 @@ export default defineConfig({
   },
 
   plugins: [
-    vue(),
+    Vue(),
+    AutoImport({
+      dts: 'src/declarations/auto-imports.d.ts',
+      imports: [
+        'vue',
+        'vue-router',
+        {
+          from: 'vue-router',
+          imports: [
+            'createRouter',
+            'createWebHistory',
+          ],
+        },
+      ],
+    }),
+    Components({
+      dts: 'src/declarations/components.d.ts',
+      resolvers: [
+        IconsResolver({
+          prefix: false,
+        }),
+      ],
+    }),
     Icons({
       autoInstall: true,
     }),

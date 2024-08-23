@@ -1,14 +1,11 @@
 <script setup lang="ts">
-// DEPENDENCIES
-import { ref } from 'vue';
+// TYPES
+import type { TagsModel } from '@components/TagsInput/types';
 
 // COMPONENTS
-import TagsInput from '@components/TagsInput/TagsInput.vue';
+import CloseFill from '~icons/iconamoon/close-fill';
 
-// TYPES
-import type { ITagsModel } from '@components/TagsInput/types';
-
-const tags = ref<ITagsModel[]>([]);
+const tags = ref<TagsModel[]>([]);
 </script>
 
 <template>
@@ -93,6 +90,7 @@ const tags = ref<ITagsModel[]>([]);
           v-model="tags"
           name="tags"
           autocomplete="off"
+          :icon="CloseFill"
         />
       </fieldset>
 

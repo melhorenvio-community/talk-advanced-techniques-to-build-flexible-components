@@ -1,11 +1,4 @@
 <script setup lang="ts">
-// DEPENDENCIES
-import { computed } from 'vue';
-import { useRouter } from 'vue-router';
-
-// COMPONENTS
-import LeftArrowCurvingRight from '~icons/twemoji/left-arrow-curving-right';
-
 const router = useRouter();
 
 const demoRoutes = computed(() => router.getRoutes().filter(r => String(r.name).includes('demo')));
@@ -25,7 +18,7 @@ const demoRoutes = computed(() => router.getRoutes().filter(r => String(r.name).
         class="inline-flex hover:text-boston-blue transition-all"
       >
         <span class="inline-flex items-center gap-2">
-          <left-arrow-curving-right /> {{ route.meta.title }}
+          <twemoji-left-arrow-curving-right /> {{ route.meta.title }}
         </span>
       </router-link>
     </nav>

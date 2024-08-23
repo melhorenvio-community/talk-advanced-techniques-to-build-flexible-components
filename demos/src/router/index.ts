@@ -1,9 +1,6 @@
 // TYPES
 import type { RouteRecordRaw } from 'vue-router';
 
-// DEPENDENCIES
-import { createRouter, createWebHistory } from 'vue-router';
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',

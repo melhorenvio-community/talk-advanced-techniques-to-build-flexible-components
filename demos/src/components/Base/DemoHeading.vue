@@ -1,10 +1,4 @@
 <script setup lang="ts">
-// DEPENDENCIES
-import { useRoute } from 'vue-router';
-
-// COMPONENTS
-import ArrowBack from '~icons/ion/arrow-back';
-
 const route = useRoute();
 </script>
 
@@ -18,7 +12,7 @@ const route = useRoute();
       :to="{ name: 'intro' }"
       class="flex items-center gap-2 font-bold hover:text-green-500 transition-all"
     >
-      <arrow-back />
+      <ion-arrow-back />
 
       Voltar
     </router-link>
