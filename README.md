@@ -51,7 +51,12 @@
 O projeto consiste basicamente de uma apresentação em slides, criada utilizando o [slidev](https://sli.dev/) seguida de alguns exemplos práticos e demonstrações de diferentes versões de componentes, abordando os tópicos detalhados a seguir.
 
 Para consultar o repositório da __apresentação__, [clique aqui](./slidev/README.md).<br>
-Para consultar o repositório das __demos__, [clique aqui](./demos/README.md).
+Para consultar o repositório das __demos__, [clique aqui](./slidev/README.md).<br>
+
+---
+
+Para visualizar a apresentação em __slides__, [clique aqui](https://slides-flexible-components.netlify.app/1).<br>
+Para consultar as __demos__, [clique aqui]([./slidev/README.md](https://demos-flexible-components.netlify.app/)).
 
 <p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
 
