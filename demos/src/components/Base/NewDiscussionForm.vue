@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // TYPES
-import type { ITagsModel } from '@components/TagsInput/types';
+import type { TagsModel } from '@components/TagsInput/types';
 
 // COMPONENTS
 import CloseFill from '~icons/iconamoon/close-fill';
 
-const tags = ref<ITagsModel[]>([]);
+const tags = ref<TagsModel[]>([]);
 </script>
 
 <template>

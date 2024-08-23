@@ -1,15 +1,18 @@
 // TYPES
 import type { FunctionalComponent } from 'vue';
 
-export interface ITagsModel {
+export type Theme = 'light' | 'dark';
+
+export interface TagsModel {
   id: string;
   text: string;
 }
-export interface ITagsInputModel {
-  tags: ITagsModel[];
+
+export interface TagsInputModel {
+  tags: TagsModel[];
 };
 
-export interface ITagsProps {
-  theme?: 'light' | 'dark';
+export interface TagsProps {
+  theme?: Theme;
   icon?: FunctionalComponent;
 };

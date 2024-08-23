@@ -3,7 +3,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
-import type { ITagsModel, ITagsProps } from '@components/TagsInput/types';
+import type { TagsModel, TagsProps } from '@components/TagsInput/types';
 
 // COMPONENTS
 import TrashThin from '~icons/iconamoon/trash-thin';
@@ -12,16 +12,18 @@ defineOptions({
   inheritAttrs: false,
 });
 
-const props = withDefaults(defineProps<ITagsProps>(), {
+const props = withDefaults(defineProps<TagsProps>(), {
   theme: 'dark',
   icon: TrashThin,
 });
 
-const tags = defineModel<ITagsModel[]>();
+const tags = defineModel<TagsModel[]>();
 
 const newTag = ref('');
 
 const placeholder = computed(() => tags.value?.length ? '' : 'Type a tag name...');
+
+const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-500 text-white' : 'bg-purple-200 text-purple-400');
 
 function addTag(text: string): void {
   const tagAlreadyExists = tags.value?.find(tag => tag.text === text);
@@ -69,7 +71,8 @@ function removeTag(id?: string): void {
       <span
         v-for="tag in tags"
         :key="tag.id"
-        class="flex gap-2 px-3 py-1 rounded-sm bg-purple-500 text-white"
+        :class="themeClasses"
+        class="flex gap-2 px-3 py-1 rounded-sm"
       >
         {{ tag.text }}
 
