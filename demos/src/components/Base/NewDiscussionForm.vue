@@ -107,8 +107,8 @@ const tags = ref<TagsModel[]>([]);
           rounded-sm
           font-bold
           text-white
-          bg-purple-500
-          hover:bg-purple-600 transition-all
+          bg-purple-400
+          hover:bg-purple-500 transition-all
         "
       >
         Start Discussion
