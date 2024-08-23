@@ -31,7 +31,7 @@ const tags = ref<TagsModel[]>([]);
           type="text"
           name="title"
           placeholder="New discussion..."
-          class="block p-2 border-2"
+          class="block p-3 border-2"
         >
       </fieldset>
 
@@ -46,7 +46,7 @@ const tags = ref<TagsModel[]>([]);
         <select
           id="category"
           name="category"
-          class="block p-2 pr-4 border-2 text-gray-950"
+          class="block p-3 pr-4 border-2 text-gray-950"
         >
           <option
             disabled
@@ -74,7 +74,7 @@ const tags = ref<TagsModel[]>([]);
         name="description"
         placeholder="Write your ideas..."
         rows="5"
-        class="col-span-2 block p-2 border-2 resize-none"
+        class="col-span-2 block p-3 border-2 resize-none"
       />
 
       <fieldset class="col-span-2 flex flex-col gap-2">
