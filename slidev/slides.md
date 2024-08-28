@@ -2,8 +2,8 @@
 theme: dracula
 title: "Vue.js: Técnicas avançadas para desenvolver componentes reutilizáveis"
 author: Leonardo Adamoli e Breno Pereira
-keywords: css,trending,dev,guide
-exportFilename: modern-css-a-practical-guide-exported
+keywords: vue,components,scoped-slots,dev,guide
+exportFilename: advanced-techniques-to-build-flexible-components-exported
 class: text-center
 transition: slide-left
 hideInToc: true
@@ -34,7 +34,7 @@ src: ./pages/topics/01-group-presentation.md
 
 <!-- Real problems demonstration -->
 ---
-src: ./pages/topics/02-real-problems.md
+src: ./pages/topics/02-use-case.md
 ---
 
 <!-- Styles management -->
