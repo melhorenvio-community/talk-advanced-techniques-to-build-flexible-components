@@ -29,22 +29,42 @@ src: ./pages/summary.md
 
 <!-- Group Presentation -->
 ---
-src: ./pages/foundations/01-group-presentation.md
+src: ./pages/topics/01-group-presentation.md
 ---
 
-<!-- Styles Management -->
+<!-- Real problems demonstration -->
 ---
-src: ./pages/foundations/02-styles-management.md
----
-
-<!-- Scope -->
----
-src: ./pages/foundations/03-scoped-css.md
+src: ./pages/topics/02-real-problems.md
 ---
 
-<!-- Individual transform properties -->
+<!-- Styles management -->
 ---
-src: ./pages/foundations/04-individual-transform-properties.md
+src: ./pages/topics/03-styles-management.md
+---
+
+<!-- Behavior management -->
+---
+src: ./pages/topics/04-behavior-management.md
+---
+
+<!-- Low-end component -->
+---
+src: ./pages/topics/05-low-end-component.md
+---
+
+<!-- Low-end component solutions -->
+---
+src: ./pages/topics/06-low-end-component-solutions.md
+---
+
+<!-- Mid-end component -->
+---
+src: ./pages/topics/07-mid-end-component.md
+---
+
+<!-- High-end component -->
+---
+src: ./pages/topics/08-high-end-component.md
 ---
 
 <!-- References -->
