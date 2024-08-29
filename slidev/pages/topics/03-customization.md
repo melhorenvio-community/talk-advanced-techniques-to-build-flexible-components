@@ -35,7 +35,7 @@ hideInToc: true
 
 <br>
 
-```vue {all|2|2,3|2,3,4|2,3,4,5|2,3,4,5,6|2,3,4,5,6,7|all}
+```vue {all|2|2,3|2,3,4|2,3,4,5|2,3,4,5,6|2,3,4,5,6,7}
 <tags-input
   tag-text-color="dark-purple"
   tag-bg-color="purple"
@@ -79,4 +79,41 @@ hideInToc: true
 <!-- Docs -->
 <AppReferences class="mt-[36px]">
   <AppLink url="https://primevue.org/card/#theming.classes" title="Exemplo - Prime Vue" />
+</AppReferences>
+
+---
+layout: section
+---
+
+<section>
+  <h2 class="section-title">Opção #03</h2>
+  <p class="text-green">
+    <i>Class Overrides</i>
+  </p>
+</section>
+
+---
+hideInToc: true
+---
+
+# Class Overrides
+
+- Possibilitam determinar classes customizadas para serem aplicadas ao elemento.
+- Resolve o problema de conflitos de nomes e de convenções do _CSS_.
+- Ainda assim podem ser difíceis de gerenciar e facilmente _inflam_ o template dos componentes.
+
+<br>
+
+```vue
+<tags-input 
+  wrapper-class="tags-input"
+  tag-class="tags-input__tag"
+  input-class="tags-input__input"
+  remove-tag-class="tags-input__remove"
+/>
+```
+
+<!-- Docs -->
+<AppReferences class="mt-[64px]">
+  <AppLink url="https://vue-select.org/guide/css.html#overriding-default-styles" title="Exemplo - Vue Select" />
 </AppReferences>
