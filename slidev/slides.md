@@ -14,7 +14,7 @@ hideInToc: true
   <figure v-motion-slide-right>
     <img class="w-64 mx-auto" src="https://www.cdnlogo.com/logos/v/92/vue-js.svg" />
     <caption class="inline-flex items-end gap-2 text-sm" v-motion-slide-left>
-      <i>Técnicas avançadas para o desenvolvimento de componentes reutilizáveis</i>
+      Técnicas avançadas para o desenvolvimento de componentes reutilizáveis
       <fluent-emoji-hammer-and-wrench class="w-6 h-6" />
     </caption>
   </figure>

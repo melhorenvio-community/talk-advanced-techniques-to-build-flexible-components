@@ -117,3 +117,19 @@ hideInToc: true
 <AppReferences class="mt-[64px]">
   <AppLink url="https://vue-select.org/guide/css.html#overriding-default-styles" title="Exemplo - Vue Select" />
 </AppReferences>
+
+---
+layout: section
+---
+
+<section>
+  <h2 class="section-title">
+    "Customization is...
+  </h2>
+  
+  <p v-click class="text-green">
+    <i>a bottomless pit!"</i>
+  </p>
+
+  <iframe v-after src="https://giphy.com/embed/ZPQLVgoXJT7K8" width="200" height="190" class="mx-auto" />
+</section>
