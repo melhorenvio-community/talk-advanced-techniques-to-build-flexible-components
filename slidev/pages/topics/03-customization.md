@@ -119,6 +119,31 @@ hideInToc: true
 </AppReferences>
 
 ---
+hideInToc: true
+---
+
+# E ainda pode piorar...
+
+- Até o momento falamos apenas de customizações visuais...
+- E quando às customizações **comportamentais**? <noto-bomb class="w-6 h-6" />
+
+<br>
+
+```vue
+<tags-input 
+  wrapper-class="tags-input"
+  tag-class="tags-input__tag"
+  input-class="tags-input__input"
+  remove-tag-class="tags-input__remove"
+  :icon="Trash"
+  icon-position="left"
+  layout="bottom"
+/>
+```
+
+<span class="block my-14 text-center">A grande verdade é que...</span>
+
+---
 layout: section
 ---
 
