@@ -1,6 +1,6 @@
 ---
 theme: dracula
-title: "Vue.js: Técnicas avançadas para desenvolver componentes reutilizáveis"
+title: "Vue.js: Técnicas avançadas para o desenvolvimento de componentes reutilizáveis"
 author: Leonardo Adamoli e Breno Pereira
 keywords: vue,components,scoped-slots,dev,guide
 exportFilename: advanced-techniques-to-build-flexible-components-exported
@@ -11,15 +11,13 @@ hideInToc: true
 
 <!-- Intro -->
 <section>
-  <h1 class="section-title" v-motion-slide-right>
-    Vue.js
-  </h1>
-
-  <small 
-    class="inline-flex items-end gap-2 text-green" v-motion-slide-left>
-    <i>Técnicas avançadas para desenvolver componentes reutilizáveis</i>
-    <fluent-emoji-hammer-and-wrench class="w-[30px] h-[30px]" />
-  </small>
+  <figure v-motion-slide-right>
+    <img class="w-64 mx-auto" src="https://www.cdnlogo.com/logos/v/92/vue-js.svg" />
+    <caption class="inline-flex items-end gap-2 text-sm" v-motion-slide-left>
+      <i>Técnicas avançadas para o desenvolvimento de componentes reutilizáveis</i>
+      <fluent-emoji-hammer-and-wrench class="w-6 h-6" />
+    </caption>
+  </figure>
 </section>
 
 <!-- Toc -->
@@ -32,14 +30,14 @@ src: ./pages/summary.md
 src: ./pages/topics/01-group-presentation.md
 ---
 
-<!-- Real problems demonstration -->
+<!-- Use case -->
 ---
 src: ./pages/topics/02-use-case.md
 ---
 
-<!-- Styles management -->
+<!-- Customization -->
 ---
-src: ./pages/topics/03-styles-management.md
+src: ./pages/topics/03-customization.md
 ---
 
 <!-- Behavior management -->
