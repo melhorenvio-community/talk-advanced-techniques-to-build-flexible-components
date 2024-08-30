@@ -26,14 +26,20 @@ hideInToc: true
 
 <br>
 
-```vue
-<tags-input 
-  wrapper-class="tags-input"
-  tag-class="tags-input__tag"
-  input-class="tags-input__input"
-  remove-tag-class="tags-input__remove"
-  :icon="Trash"
-  icon-position="left"
-  layout="bottom"
-/>
+```html
+<!-- BaseButton template -->
+<button class="base-button">
+  <slot></slot> 
+</button>
+```
+
+```js
+// Slots are converted into plain functions, passing it's own content as argument.
+BaseButton('Click me!')
+
+function BaseButton(slotContent) {
+  return `<button class="base-button">
+      ${slotContent}
+    </button>`;
+}
 ```
