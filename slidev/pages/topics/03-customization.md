@@ -170,7 +170,7 @@ layout: section
     <i class="mr-1">Desistir</i> <noto-loudly-crying-face />
   </p>
 
-  <p v-click>ou então utilize</p>
+  <p v-click>ou então utilizar</p>
 
   <p v-after class="text-green">
     <i class="font-bold text-3xl">Scoped Slots</i>

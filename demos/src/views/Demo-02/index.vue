@@ -2,9 +2,6 @@
 // TYPES
 import type { TagsModel } from '@components/TagsInput/types';
 
-// COMPONENTS
-import Trash from '~icons/iconamoon/trash';
-
 const tags = ref<TagsModel[]>([]);
 </script>
 
@@ -18,10 +15,6 @@ const tags = ref<TagsModel[]>([]);
         v-model="tags"
         name="tags"
         autocomplete="off"
-        :icon="Trash"
-        icon-position="left"
-        theme="light"
-        layout="bottom"
       />
     </new-discussion-form>
   </div>
