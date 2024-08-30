@@ -1,7 +1,28 @@
+<script setup lang="ts">
+// TYPES
+import type { TagsModel } from '@components/TagsInput/types';
+
+// COMPONENTS
+import Trash from '~icons/iconamoon/trash';
+
+const tags = ref<TagsModel[]>([]);
+</script>
+
 <template>
   <div class="flex flex-col gap-4">
     <demo-heading />
 
-    <new-discussion-form />
+    <new-discussion-form>
+      <tags-input
+        id="tags"
+        v-model="tags"
+        name="tags"
+        autocomplete="off"
+        :icon="Trash"
+        icon-position="left"
+        theme="light"
+        layout="bottom"
+      />
+    </new-discussion-form>
   </div>
 </template>

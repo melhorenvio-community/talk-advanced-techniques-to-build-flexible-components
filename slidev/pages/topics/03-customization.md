@@ -158,3 +158,21 @@ layout: section
 
   <iframe v-after src="https://giphy.com/embed/ZPQLVgoXJT7K8" width="200" height="190" class="mx-auto" />
 </section>
+
+---
+layout: section
+---
+
+<section class="customization-04">
+  <h2 class="section-title">Opção #04</h2>
+
+  <p v-after class="text-green">
+    <i class="mr-1">Desistir</i> <noto-loudly-crying-face />
+  </p>
+
+  <p v-click>ou então utilize</p>
+
+  <p v-after class="text-green">
+    <i class="font-bold text-3xl">Scoped Slots</i>
+  </p>
+</section>

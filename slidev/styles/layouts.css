@@ -22,5 +22,12 @@
     &.image-right + * {
       @apply !bg-contain mx-6;
     }
+
+    .customization-04 {
+
+      .slidev-vclick-prior:first-of-type > i {
+        @apply line-through;
+      }
+    }
   }
 }
