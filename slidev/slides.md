@@ -42,7 +42,7 @@ src: ./pages/topics/03-customization.md
 
 <!-- Behavior management -->
 ---
-src: ./pages/topics/04-behavior-management.md
+src: ./pages/topics/04-regular-slots.md
 ---
 
 <!-- Low-end component -->

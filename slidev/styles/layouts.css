@@ -16,6 +16,10 @@
     /* Custom section title */
     .section-title {
       @apply !font-black !text-white;
+
+      &--green {
+        @apply !text-green;
+      }
     }
 
     &.image-right + * {
