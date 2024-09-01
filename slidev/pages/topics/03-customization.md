@@ -63,9 +63,9 @@ hideInToc: true
 
 # CSS Hooks
 
-- É uma maneira mais tradicional, onde algumas classes pré-definidas são disponibilizdas para aplicar as customizações.
+- É uma maneira mais tradicional, onde algumas classes **pré-definidas** são disponibilizdas para aplicar as customizações.
 - Cada classe possui sua documentação na _lib_, definindo a qual elemento se aplicam e quais efeitos visuais ocasionam.
-- Como possuem regras e classes pré-definidas, podem conflitar com a estratégia adotada para o _CSS_ do projeto.
+- Como possuem regras e classes préviamente, podem conflitar com a estratégia adotada para o _CSS_ do projeto.
 
 <br>
 
@@ -172,7 +172,7 @@ layout: section
 
   <p v-click>ou então utilizar</p>
 
-  <p v-after class="text-green">
-    <i class="font-bold text-3xl">Scoped Slots</i>
-  </p>
+  <h1 v-after class="section-title section-title--green">
+    Scoped Slots
+  </h1>
 </section>

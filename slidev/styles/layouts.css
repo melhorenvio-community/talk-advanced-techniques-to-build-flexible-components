@@ -18,7 +18,7 @@
       @apply !font-black !text-white;
 
       &--green {
-        @apply !text-green;
+        @apply !text-green !italic;
       }
     }
 
