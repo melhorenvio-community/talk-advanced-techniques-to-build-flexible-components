@@ -102,19 +102,11 @@ hideInToc: true
 
 # Regular Slots
 
-- Se assemelham muito com o conceito das _render props_ antigamente utilizadas pelo [React](https://legacy.reactjs.org/docs/render-props.html).
 - São resolvidos em funções de renderização, nomeadas, que recebem o conteúdo do _slot_ passado como parâmetro.
 
 <br>
 
 ```js
-// Slots are converted into plain functions, passing it's own content as argument.
-BaseCard({
-  header: `...`,
-  body: `...`,
-  footer: `...`
-});
-
 // Each slot is rendered in it's related place.
 function BaseCard(slots) {
   return `<div class="card">
@@ -123,4 +115,11 @@ function BaseCard(slots) {
       <footer class="card-footer">${slots.footer}</footer>
     </div>`
 }
+
+// Slots are converted into plain functions, passing it's own content as argument.
+BaseCard({
+  header: `...`,
+  body: `...`,
+  footer: `...`
+});
 ```

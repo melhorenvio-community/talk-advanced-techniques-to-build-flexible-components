@@ -47,7 +47,7 @@ src: ./pages/topics/04-regular-slots.md
 
 <!-- Low-end component -->
 ---
-src: ./pages/topics/05-low-end-component.md
+src: ./pages/topics/05-scoped-slots.md
 ---
 
 <!-- Low-end component solutions -->
