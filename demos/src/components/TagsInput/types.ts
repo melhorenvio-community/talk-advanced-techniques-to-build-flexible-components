@@ -22,3 +22,5 @@ export interface TagsProps {
   icon?: FunctionalComponent;
   iconPosition?: IconPosition;
 };
+
+export type TagsV2Props = Pick<TagsProps, 'theme' | 'icon'>;

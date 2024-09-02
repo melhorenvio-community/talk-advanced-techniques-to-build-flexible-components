@@ -12,7 +12,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
-const props = withDefaults(defineProps<TagsProps>(), {
+const props: TagsProps = withDefaults(defineProps<TagsProps>(), {
   layout: 'inner',
   theme: 'dark',
   icon: CloseFill,

@@ -62,15 +62,15 @@ hideInToc: true
 
 ```html
 <!-- In the consumer (parent component) -->
-<span class="flex gap-2 px-3 py-1 rounded-sm select-none">
-  <template #tag>
+<template #tag>
+  <span class="flex gap-2 px-3 py-1 rounded-sm select-none" :class="themeClasses">
     {{ tag }}
 
     <button type="button" @click="removeTag(tag.id)">
       <TrashIcon />
     </button>
-  </template>
-</span>
+  </span>
+</template>
 ```
 
 ---
@@ -95,22 +95,22 @@ hideInToc: true
 
 <br>
 
-```html {all|4|6|all}
+```html {all|3|4|6|all}
 <!-- In the consumer (parent component) -->
-<span class="flex gap-2 px-3 py-1 rounded-sm select-none">
-  <template #tag>
+<template #tag>
+  <span class="flex gap-2 px-3 py-1 rounded-sm select-none" :class="themeClasses">
     {{ tag.text }}
 
     <button type="button" @click="removeTag(tag.id)">
       <TrashIcon />
     </button>
-  </template>
-</span>
+  </span>
+</template>
 ```
 
 <br>
 
-- No contexto do pai, não temos acesso ao conteúdo da `tag`, tampouco ao método `removeTag` _bindado_ ao elemento `button`.
+- No contexto do pai, não temos acesso às props `tag` e `themeClasses`, tampouco ao método `removeTag` _bindado_ ao elemento `button`.
 - Para resolver esse problema, precisamos conceder o acesso a esses recursos, transformando o conteúdo renderizado pelo _slot_ em uma função de callback.
 
 ---
@@ -131,6 +131,8 @@ hideInToc: true
   :key="tag.id" 
   name="tag"
   :tag="tag"
+  :theme-classes="themeClasses"
+  :remove-tag="removeTag"
 />
 ```
 
@@ -146,15 +148,15 @@ hideInToc: true
 
 ```html
 <!-- In the consumer (parent component) -->
-<span class="flex gap-2 px-3 py-1 rounded-sm select-none">
-  <template #tag="{tag}">
+<template #tag="{tag, themeClasses, removeTag}">
+  <span class="flex gap-2 px-3 py-1 rounded-sm select-none" :class="themeClasses">
     {{ tag.text }}
 
     <button type="button" @click="removeTag(tag.id)">
       <TrashIcon />
     </button>
-  </template>
-</span>
+  </span>
+</template>
 ```
 
 ---
@@ -171,7 +173,8 @@ hideInToc: true
 function TagsInput(slots) {
   const myTag = {
     id: 12345,
-    text: 'Lorem'
+    foo: 'Bar',
+    baz: 'Qux'
   };
 
   return `<span>${ slots.tag({ myTag })}</span>`;
@@ -179,7 +182,7 @@ function TagsInput(slots) {
 
 TagsInput({
   tag: ({myTag}) => {
-    return `${myTag.text}`;
+    return `${myTag.foo} ${myTag.baz}`;
   }
 });
 ```
