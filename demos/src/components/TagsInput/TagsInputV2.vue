@@ -21,9 +21,11 @@ const tags = defineModel<TagsModel[]>();
 
 const newTag = ref('');
 
-const placeholder = computed(() => tags.value?.length ? '' : 'Type a tag name...');
-
 const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
+
+function handleInput(event: Event) {
+  newTag.value = (event.target as HTMLInputElement).value;
+}
 
 function addTag(text: string): void {
   const tagAlreadyExists = tags.value?.find(tag => tag.text === text);
@@ -73,30 +75,15 @@ function removeTag(id?: string): void {
         :tag="tag"
         :theme-classes="themeClasses"
         :remove-tag="removeTag"
-      >
-        <span
-          class="flex gap-2 px-3 py-1 rounded-sm select-none"
-          :class="themeClasses"
-        >
-          {{ tag.text }}
-
-          <button
-            type="button"
-            @click="removeTag(tag.id)"
-          >
-            <component :is="props.icon" />
-          </button>
-        </span>
-      </slot>
+      />
     </transition-group>
 
-    <input
-      v-model="newTag"
-      v-bind="$attrs"
-      :placeholder
-      class="w-auto h-8 grow outline-none"
-      @keydown.backspace="removeTag()"
-      @keydown.enter.prevent="addTag(newTag)"
-    >
+    <slot
+      name="input"
+      :new-tag="newTag"
+      :on-input="handleInput"
+      :add-tag="addTag"
+      :remove-tag="removeTag"
+    />
   </div>
 </template>

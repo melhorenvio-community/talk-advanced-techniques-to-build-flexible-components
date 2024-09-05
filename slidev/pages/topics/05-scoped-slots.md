@@ -186,3 +186,28 @@ TagsInput({
   }
 });
 ```
+
+---
+layout: section
+hideInToc: true
+---
+
+<!-- Scoped Slots -->
+<section>
+  <h2 class="!text-white">Scoped Slots</h2>
+
+  <h1 class="section-title section-title--green">
+    Prop categories
+  </h1>
+</section>
+
+---
+hideInToc: true
+---
+
+# Scoped Slots - prop categories
+
+- **State/Data**: Variáveis reativas, passadas no escopo do slot para serem _utilizadas_ no componente pai.
+- **Actions**: Funções/Métodos passados no escopo do slot para serem _executadas_ no componente pai.
+- **Event Handlers**: Eventos nativos agrupados em um único objeto pelo componente filho e disponibilizados para que o componente pai possa associar através de um único `v-on`. 
+- **Bindings**: Variáveis reativas agrupadas em um único objeto no componente filho e disponibilizadas para que o componente pai possa associar através de um único `v-bind`.

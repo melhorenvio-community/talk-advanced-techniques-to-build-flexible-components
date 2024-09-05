@@ -3,7 +3,7 @@
 import type { TagsModel } from '@components/TagsInput/types';
 
 // COMPONENTS
-// import Trash from '~icons/iconamoon/trash';
+import Trash from '~icons/iconamoon/trash';
 
 const tags = ref<TagsModel[]>([]);
 </script>
@@ -19,7 +19,7 @@ const tags = ref<TagsModel[]>([]);
         name="tags"
         autocomplete="off"
       >
-        <!-- <template
+        <template
           #tag="{
             tag,
             themeClasses,
@@ -39,7 +39,25 @@ const tags = ref<TagsModel[]>([]);
               <trash />
             </button>
           </span>
-        </template> -->
+        </template>
+
+        <template
+          #input="{
+            newTag,
+            onInput,
+            addTag,
+            removeTag,
+          }"
+        >
+          <input
+            class="w-auto h-8 grow outline-none"
+            placeholder="Type something new..."
+            :value="newTag"
+            @input="onInput"
+            @keydown.backspace="removeTag()"
+            @keydown.enter.prevent="addTag(newTag)"
+          >
+        </template>
       </tags-input-v2>
     </new-discussion-form>
   </div>
