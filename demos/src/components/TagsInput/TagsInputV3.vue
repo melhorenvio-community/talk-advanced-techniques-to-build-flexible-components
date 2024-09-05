@@ -86,7 +86,7 @@ function removeTag(id?: string): void {
       :listeners="{
         input: (e: Event) => handleInput(e),
         keydown: (e: KeyboardEvent) => {
-          if (e.key === 'Backspase') {
+          if (e.key === 'Backspace') {
             removeTag();
 
             return;
