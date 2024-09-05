@@ -64,7 +64,7 @@ hideInToc: true
 <!-- In the consumer (parent component) -->
 <template #tag>
   <span class="flex gap-2 px-3 py-1 rounded-sm select-none" :class="themeClasses">
-    {{ tag }}
+    {{ tag.text }}
 
     <button type="button" @click="removeTag(tag.id)">
       <TrashIcon />

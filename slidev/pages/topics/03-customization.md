@@ -65,7 +65,7 @@ hideInToc: true
 
 - É uma maneira mais tradicional, onde algumas classes **pré-definidas** são disponibilizdas para aplicar as customizações.
 - Cada classe possui sua documentação na _lib_, definindo a qual elemento se aplicam e quais efeitos visuais ocasionam.
-- Como possuem regras e classes préviamente, podem conflitar com a estratégia adotada para o _CSS_ do projeto.
+- Como possuem regras e classes préviamente definidas, podem conflitar com a estratégia adotada para o _CSS_ do projeto.
 
 <br>
 

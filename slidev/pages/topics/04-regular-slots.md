@@ -102,7 +102,7 @@ hideInToc: true
 
 # Regular Slots
 
-- São resolvidos em funções de renderização, nomeadas, que recebem o conteúdo do _slot_ passado como parâmetro.
+- São resolvidos em funções de renderização, nomeadas, que recebem o conteúdo do(s) _slot(s)_ como parâmetro.
 
 <br>
 
