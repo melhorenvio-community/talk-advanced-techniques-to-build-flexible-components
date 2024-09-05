@@ -18,6 +18,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     TagsInput: typeof import('./../components/TagsInput/TagsInput.vue')['default']
     TagsInputV2: typeof import('./../components/TagsInput/TagsInputV2.vue')['default']
+    TagsInputV3: typeof import('./../components/TagsInput/TagsInputV3.vue')['default']
     TwemojiFlagBrazil: typeof import('~icons/twemoji/flag-brazil')['default']
     TwemojiLeftArrowCurvingRight: typeof import('~icons/twemoji/left-arrow-curving-right')['default']
   }
