@@ -1,9 +1,15 @@
 <script setup lang="ts">
 // DEPENDENCIES
+import { Fragment } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
-import type { TagsModel, TagsProps } from '@components/TagsInput/types';
+import type {
+  TagsInputBindings,
+  TagsInputListeners,
+  TagsModel,
+  TagsProps,
+} from '@components/TagsInput/types';
 
 defineOptions({
   inheritAttrs: false,
@@ -14,11 +20,36 @@ const props: TagsProps = withDefaults(defineProps<Pick<TagsProps, 'theme'>>(), {
   theme: 'dark',
 });
 
+const slots = useSlots();
+
 const tags = defineModel<TagsModel[]>();
 
 const newTag = ref<string>('');
 
+const inputBindings = reactive<TagsInputBindings>({
+  value: newTag.value,
+});
+
 const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
+
+// STATIC
+const inputListeners: TagsInputListeners = {
+  input: (e: Event) => handleInput(e),
+
+  keydown: (e: KeyboardEvent) => {
+    if (e.key === 'Backspace') {
+      removeTag();
+
+      return;
+    }
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+
+      addTag(newTag.value);
+    }
+  },
+};
 
 // METHODS
 function handleInput(event: Event): void {
@@ -55,33 +86,22 @@ function removeTag(id?: string): void {
 
   tags.value.splice(target, 1);
 }
+
+function render() {
+  return h(Fragment, [
+    slots?.default
+      ? slots.default({
+        tags: tags.value,
+        themeClasses: themeClasses.value,
+        removeTag,
+        inputBindings,
+        inputListeners,
+      })
+      : null,
+  ]);
+}
 </script>
 
 <template>
-  <div class="w-full flex items-center flex-wrap gap-2 p-2 border-2">
-    <transition-group
-      v-if="tags?.length"
-      name="fade"
-      tag="div"
-      class="flex items-center flex-wrap gap-2"
-      appear
-    >
-      <slot
-        v-for="tag in tags"
-        :key="tag.id"
-        name="tag"
-        :tag="tag"
-        :theme-classes="themeClasses"
-        :remove-tag="removeTag"
-      />
-    </transition-group>
-
-    <slot
-      name="input"
-      :new-tag="newTag"
-      :on-input="handleInput"
-      :add-tag="addTag"
-      :remove-tag="removeTag"
-    />
-  </div>
+  <render />
 </template>

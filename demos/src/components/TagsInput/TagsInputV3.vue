@@ -7,20 +7,16 @@ import type {
   TagsInputBindings,
   TagsInputListeners,
   TagsModel,
-  TagsV2Props,
+  TagsProps,
 } from '@components/TagsInput/types';
-
-// COMPONENTS
-import CloseFill from '~icons/iconamoon/close-fill';
 
 defineOptions({
   inheritAttrs: false,
 });
 
 // REACTIVE
-const props: TagsV2Props = withDefaults(defineProps<TagsV2Props>(), {
+const props: TagsProps = withDefaults(defineProps<Pick<TagsProps, 'theme'>>(), {
   theme: 'dark',
-  icon: CloseFill,
 });
 
 const tags = defineModel<TagsModel[]>();

@@ -31,5 +31,3 @@ export interface TagsInputListeners {
   input: (e: Event) => void;
   keydown: (e: KeyboardEvent) => void;
 }
-
-export type TagsV2Props = Pick<TagsProps, 'theme' | 'icon'>;
