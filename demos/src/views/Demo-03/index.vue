@@ -3,7 +3,7 @@
 import type { TagsModel } from '@components/TagsInput/types';
 
 // COMPONENTS
-import Trash from '~icons/iconamoon/trash';
+import CloseFill from '~icons/iconamoon/close-fill';
 
 const tags = ref<TagsModel[]>([]);
 </script>
@@ -22,21 +22,17 @@ const tags = ref<TagsModel[]>([]);
         <template
           #tag="{
             tag,
-            themeClasses,
             removeTag,
           }"
         >
-          <span
-            class="flex gap-2 px-3 py-1 rounded-sm select-none"
-            :class="themeClasses"
-          >
+          <span class="flex gap-2 px-3 py-1 rounded-sm select-none bg-purple-400 text-white">
             {{ tag.text }}
 
             <button
               type="button"
               @click="removeTag(tag.id)"
             >
-              <trash />
+              <close-fill />
             </button>
           </span>
         </template>

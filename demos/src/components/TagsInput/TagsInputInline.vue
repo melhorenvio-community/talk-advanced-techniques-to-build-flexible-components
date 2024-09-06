@@ -49,7 +49,7 @@ const tagsModel = defineModel<TagsModel[]>();
 
         <input
           class="w-auto h-8 grow outline-none"
-          placeholder="Type something new..."
+          placeholder="Tags will be displayed inline..."
           v-bind="inputBindings"
           v-on="inputListeners"
         >

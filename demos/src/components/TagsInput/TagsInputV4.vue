@@ -33,7 +33,7 @@ export default defineComponent({
     });
 
     const inputListeners: TagsInputListeners = {
-      input: (e: Event) => handleInput(e),
+      input: (e: Event) => onInput(e),
 
       keydown: (e: KeyboardEvent) => {
         if (e.key === 'Backspace') {
@@ -50,7 +50,7 @@ export default defineComponent({
       },
     };
 
-    function handleInput(event: Event): void {
+    function onInput(event: Event): void {
       newTag.value = (event.target as HTMLInputElement).value;
     }
 

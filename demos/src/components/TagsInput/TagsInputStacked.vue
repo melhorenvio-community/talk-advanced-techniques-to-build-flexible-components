@@ -26,7 +26,7 @@ const tagsModel = defineModel<TagsModel[]>();
       <div class="w-full flex flex-col gap-2">
         <input
           class="w-full p-3 border-2 outline-none"
-          placeholder="Type something new..."
+          placeholder="Tags will be displayed stacked..."
           v-bind="inputBindings"
           v-on="inputListeners"
         >

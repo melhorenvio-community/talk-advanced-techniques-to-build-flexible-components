@@ -22,14 +22,10 @@ const tags = ref<TagsModel[]>([]);
         <template
           #tag="{
             tag,
-            themeClasses,
             removeTag,
           }"
         >
-          <span
-            class="flex gap-2 px-3 py-1 rounded-sm select-none"
-            :class="themeClasses"
-          >
+          <span class="flex gap-2 px-3 py-1 rounded-sm select-none bg-purple-400 text-white">
             {{ tag.text }}
 
             <button

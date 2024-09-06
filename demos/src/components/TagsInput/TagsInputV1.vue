@@ -24,7 +24,7 @@ const tags = defineModel<TagsModel[]>();
 
 const newTag = ref<string>('');
 
-const placeholder = computed(() => tags.value?.length ? '' : 'Type a tag name...');
+const placeholder = computed(() => newTag.value ? '' : 'Type a tag name...');
 
 const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
 

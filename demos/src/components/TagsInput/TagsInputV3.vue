@@ -7,16 +7,10 @@ import type {
   TagsInputBindings,
   TagsInputListeners,
   TagsModel,
-  TagsProps,
 } from '@components/TagsInput/types';
 
 defineOptions({
   inheritAttrs: false,
-});
-
-// REACTIVE
-const props: TagsProps = withDefaults(defineProps<Pick<TagsProps, 'theme'>>(), {
-  theme: 'dark',
 });
 
 const tags = defineModel<TagsModel[]>();
@@ -27,10 +21,8 @@ const inputBindings = reactive<TagsInputBindings>({
   value: newTag.value,
 });
 
-const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
-
 // METHODS
-function handleInput(event: Event): void {
+function onInput(event: Event): void {
   newTag.value = (event.target as HTMLInputElement).value;
 }
 
@@ -67,7 +59,7 @@ function removeTag(id?: string): void {
 
 // STATIC
 const inputListeners: TagsInputListeners = {
-  input: (e: Event) => handleInput(e),
+  input: (e: Event) => onInput(e),
 
   keydown: (e: KeyboardEvent) => {
     if (e.key === 'Backspace') {
@@ -98,9 +90,8 @@ const inputListeners: TagsInputListeners = {
         v-for="tag in tags"
         :key="tag.id"
         name="tag"
-        :tag="tag"
-        :theme-classes="themeClasses"
-        :remove-tag="removeTag"
+        :tag
+        :remove-tag
       />
     </transition-group>
 
