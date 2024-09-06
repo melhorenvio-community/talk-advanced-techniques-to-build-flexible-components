@@ -16,7 +16,7 @@ declare module 'vue' {
     NewDiscussionForm: typeof import('./../components/Base/NewDiscussionForm.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TagsInput: typeof import('./../components/TagsInput/TagsInput.vue')['default']
+    TagsInputV1: typeof import('./../components/TagsInput/TagsInputV1.vue')['default']
     TagsInputV2: typeof import('./../components/TagsInput/TagsInputV2.vue')['default']
     TagsInputV3: typeof import('./../components/TagsInput/TagsInputV3.vue')['default']
     TwemojiFlagBrazil: typeof import('~icons/twemoji/flag-brazil')['default']

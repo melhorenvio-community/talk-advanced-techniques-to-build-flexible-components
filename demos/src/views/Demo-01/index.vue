@@ -10,7 +10,7 @@ const tags = ref<TagsModel[]>([]);
     <demo-heading />
 
     <new-discussion-form>
-      <tags-input
+      <tags-input-v1
         id="tags"
         v-model="tags"
         name="tags"

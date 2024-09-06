@@ -12,6 +12,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
+// REACTIVE
 const props: TagsV2Props = withDefaults(defineProps<TagsV2Props>(), {
   theme: 'dark',
   icon: CloseFill,
@@ -19,11 +20,12 @@ const props: TagsV2Props = withDefaults(defineProps<TagsV2Props>(), {
 
 const tags = defineModel<TagsModel[]>();
 
-const newTag = ref('');
+const newTag = ref<string>('');
 
 const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
 
-function handleInput(event: Event) {
+// METHODS
+function handleInput(event: Event): void {
   newTag.value = (event.target as HTMLInputElement).value;
 }
 

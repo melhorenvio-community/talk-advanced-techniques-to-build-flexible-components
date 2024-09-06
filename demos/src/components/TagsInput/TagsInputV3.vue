@@ -3,7 +3,12 @@
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
-import type { TagsModel, TagsV2Props } from '@components/TagsInput/types';
+import type {
+  TagsInputBindings,
+  TagsInputListeners,
+  TagsModel,
+  TagsV2Props,
+} from '@components/TagsInput/types';
 
 // COMPONENTS
 import CloseFill from '~icons/iconamoon/close-fill';
@@ -12,6 +17,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
+// REACTIVE
 const props: TagsV2Props = withDefaults(defineProps<TagsV2Props>(), {
   theme: 'dark',
   icon: CloseFill,
@@ -19,11 +25,16 @@ const props: TagsV2Props = withDefaults(defineProps<TagsV2Props>(), {
 
 const tags = defineModel<TagsModel[]>();
 
-const newTag = ref('');
+const newTag = ref<string>('');
+
+const inputBindings = reactive<TagsInputBindings>({
+  value: newTag.value,
+});
 
 const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
 
-function handleInput(event: Event) {
+// METHODS
+function handleInput(event: Event): void {
   newTag.value = (event.target as HTMLInputElement).value;
 }
 
@@ -57,6 +68,25 @@ function removeTag(id?: string): void {
 
   tags.value.splice(target, 1);
 }
+
+// STATIC
+const inputListeners: TagsInputListeners = {
+  input: (e: Event) => handleInput(e),
+
+  keydown: (e: KeyboardEvent) => {
+    if (e.key === 'Backspace') {
+      removeTag();
+
+      return;
+    }
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+
+      addTag(newTag.value);
+    }
+  },
+};
 </script>
 
 <template>
@@ -80,27 +110,8 @@ function removeTag(id?: string): void {
 
     <slot
       name="input"
-      :bindings="{
-        value: newTag,
-      }"
-      :listeners="{
-        input: (e: Event) => handleInput(e),
-        keydown: (e: KeyboardEvent) => {
-          if (e.key === 'Backspace') {
-            removeTag();
-
-            return;
-          }
-
-          if (e.key === 'Enter') {
-            e.preventDefault();
-
-            addTag(newTag);
-
-            return
-          }
-        },
-      }"
+      :bindings="inputBindings"
+      :listeners="inputListeners"
     />
   </div>
 </template>
