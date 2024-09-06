@@ -63,7 +63,7 @@ hideInToc: true
 ```html
 <!-- In the consumer (parent component) -->
 <template #tag>
-  <span class="flex gap-2 px-3 py-1 rounded-sm select-none" :class="themeClasses">
+  <span class="flex gap-2 px-3 py-1 rounded-sm select-none">
     {{ tag.text }}
 
     <button type="button" @click="removeTag(tag.id)">
@@ -95,10 +95,10 @@ hideInToc: true
 
 <br>
 
-```html {all|3|4|6|all}
+```html {all|4|6|all}
 <!-- In the consumer (parent component) -->
 <template #tag>
-  <span class="flex gap-2 px-3 py-1 rounded-sm select-none" :class="themeClasses">
+  <span class="flex gap-2 px-3 py-1 rounded-sm select-none">
     {{ tag.text }}
 
     <button type="button" @click="removeTag(tag.id)">
@@ -110,7 +110,7 @@ hideInToc: true
 
 <br>
 
-- No contexto do pai, não temos acesso às props `tag` e `themeClasses`, tampouco ao método `removeTag` _bindado_ ao elemento `button`.
+- No contexto do pai, não temos acesso às props `tag` e tampouco ao método `removeTag` _bindado_ ao elemento `button`.
 - Para resolver esse problema, precisamos conceder o acesso a esses recursos, transformando o conteúdo renderizado pelo _slot_ em uma função de callback.
 
 ---
@@ -130,9 +130,8 @@ hideInToc: true
   v-for="tag in tags" 
   :key="tag.id" 
   name="tag"
-  :tag="tag"
-  :theme-classes="themeClasses"
-  :remove-tag="removeTag"
+  :tag
+  :remove-tag
 />
 ```
 
@@ -148,8 +147,8 @@ hideInToc: true
 
 ```html
 <!-- In the consumer (parent component) -->
-<template #tag="{tag, themeClasses, removeTag}">
-  <span class="flex gap-2 px-3 py-1 rounded-sm select-none" :class="themeClasses">
+<template #tag="{tag, removeTag}">
+  <span class="flex gap-2 px-3 py-1 rounded-sm select-none">
     {{ tag.text }}
 
     <button type="button" @click="removeTag(tag.id)">

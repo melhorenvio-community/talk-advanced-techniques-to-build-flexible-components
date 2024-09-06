@@ -50,19 +50,14 @@ src: ./pages/topics/04-regular-slots.md
 src: ./pages/topics/05-scoped-slots.md
 ---
 
-<!-- Low-end component solutions -->
+<!-- Renderless components-->
 ---
-src: ./pages/topics/06-low-end-component-solutions.md
+src: ./pages/topics/06-renderless-components.md
 ---
 
 <!-- Mid-end component -->
 ---
-src: ./pages/topics/07-mid-end-component.md
----
-
-<!-- High-end component -->
----
-src: ./pages/topics/08-high-end-component.md
+src: ./pages/topics/07-wrapper-components.md
 ---
 
 <!-- References -->
