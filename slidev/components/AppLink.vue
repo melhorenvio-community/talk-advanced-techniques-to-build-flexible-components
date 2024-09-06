@@ -16,7 +16,8 @@
   <a 
     :href="url" 
     :title="title"
-    target="_blank" 
+    target="_blank"
+    class="w-fit"
   >
     <slot>
       <twemoji:memo />

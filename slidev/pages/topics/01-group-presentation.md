@@ -1,10 +1,10 @@
 ---
-title: Apresentação do grupo
+title: Apresentação
 layout: section
 transition: slide-up
 ---
 
-<!-- CSS custom properties -->
+<!-- Group presentation -->
 <section>
   <h1 class="section-title">
     Apresentação do grupo
@@ -37,16 +37,4 @@ hideInToc: true
       nickname: 'Squad Segurança',
     }"
   />
-</section>
-
----
-hideInToc: true
-layout: section
----
-
-<section class="items-end gap-2 text-green">
-    <h1 class="section-title">
-      Componentes reutilizáveis
-    </h1>
-    <i>como fazer? como não fazer? Você já vue?</i>
 </section>
