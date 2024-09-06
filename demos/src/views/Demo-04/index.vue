@@ -98,7 +98,7 @@ const tagsModel = ref<TagsModel[]>([]);
                 v-for="tag in tags"
                 :key="tag.id"
                 :class="themeClasses"
-                class="flex gap-2 px-3 py-1 rounded-sm select-none bg-green-500"
+                class="flex gap-2 px-3 py-1 rounded-sm select-none"
               >
                 <button
                   type="button"

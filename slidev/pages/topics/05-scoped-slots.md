@@ -181,8 +181,8 @@ function TagsInput(slots) {
 };
 
 TagsInput({
-  tag: ({myTag}) => {
-    return `${myTag.foo} ${myTag.baz}`;
+  tag: ({foo, baz}) => {
+    return `${foo} ${baz}`;
   }
 });
 ```

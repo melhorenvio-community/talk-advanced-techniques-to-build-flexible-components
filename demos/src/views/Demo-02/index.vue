@@ -3,7 +3,7 @@
 import type { TagsModel } from '@components/TagsInput/types';
 
 // COMPONENTS
-import Trash from '~icons/iconamoon/trash';
+import CloseFill from '~icons/iconamoon/close-fill';
 
 const tags = ref<TagsModel[]>([]);
 </script>
@@ -36,7 +36,7 @@ const tags = ref<TagsModel[]>([]);
               type="button"
               @click="removeTag(tag.id)"
             >
-              <trash />
+              <close-fill />
             </button>
           </span>
         </template>

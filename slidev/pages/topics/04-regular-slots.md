@@ -79,7 +79,7 @@ hideInToc: true
 
 - Facilitam a customização, pois permitem a passagem de qualquer conteúdo _HTML_.
 - São uma das formas mais eficientes para diminuir o risco a ataques **XSS** (_cross-site scripting_).
-- Facilitam a customização, uma vez que passam a responsabilidade para o _parent component_ aplicar as devidas modificações.
+- Passam a responsabilidade para o _parent component_ aplicar as devidas modificações.
 - Contribuem com o conceito de flexibilidade e reuso de código.
 - Tendem a contribuir para o desenvolvimento de componentes mais "limpos" e simples, sem conter tantas renderizações e lógicas condicionais.
 
