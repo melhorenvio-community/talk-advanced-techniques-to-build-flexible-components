@@ -16,6 +16,8 @@ declare module 'vue' {
     NewDiscussionForm: typeof import('./../components/Base/NewDiscussionForm.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TagsInputInline: typeof import('./../components/TagsInput/TagsInputInline.vue')['default']
+    TagsInputStacked: typeof import('./../components/TagsInput/TagsInputStacked.vue')['default']
     TagsInputV1: typeof import('./../components/TagsInput/TagsInputV1.vue')['default']
     TagsInputV2: typeof import('./../components/TagsInput/TagsInputV2.vue')['default']
     TagsInputV3: typeof import('./../components/TagsInput/TagsInputV3.vue')['default']

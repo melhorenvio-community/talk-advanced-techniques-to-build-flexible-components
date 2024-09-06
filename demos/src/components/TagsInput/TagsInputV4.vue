@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // DEPENDENCIES
-import { Fragment } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
@@ -8,19 +7,11 @@ import type {
   TagsInputBindings,
   TagsInputListeners,
   TagsModel,
-  TagsProps,
 } from '@components/TagsInput/types';
 
 defineOptions({
   inheritAttrs: false,
 });
-
-// REACTIVE
-const props: TagsProps = withDefaults(defineProps<Pick<TagsProps, 'theme'>>(), {
-  theme: 'dark',
-});
-
-const slots = useSlots();
 
 const tags = defineModel<TagsModel[]>();
 
@@ -29,8 +20,6 @@ const newTag = ref<string>('');
 const inputBindings = reactive<TagsInputBindings>({
   value: newTag.value,
 });
-
-const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
 
 // STATIC
 const inputListeners: TagsInputListeners = {
@@ -86,22 +75,13 @@ function removeTag(id?: string): void {
 
   tags.value.splice(target, 1);
 }
-
-function render() {
-  return h(Fragment, [
-    slots?.default
-      ? slots.default({
-        tags: tags.value,
-        themeClasses: themeClasses.value,
-        removeTag,
-        inputBindings,
-        inputListeners,
-      })
-      : null,
-  ]);
-}
 </script>
 
 <template>
-  <render />
+  <slot
+    :tags
+    :input-bindings
+    :input-listeners
+    :remove-tag
+  />
 </template>
