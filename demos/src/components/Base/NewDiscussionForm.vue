@@ -1,13 +1,3 @@
-<script setup lang="ts">
-// TYPES
-import type { TagsModel } from '@components/TagsInput/types';
-
-// COMPONENTS
-// import Trash from '~icons/iconamoon/trash';
-
-const tags = ref<TagsModel[]>([]);
-</script>
-
 <template>
   <div class="w-[800px] h-auto p-10 bg-white rounded-xl">
     <h3 class="font-bold text-xl text-center text-gray-950">
@@ -85,12 +75,7 @@ const tags = ref<TagsModel[]>([]);
           Tags
         </label>
 
-        <tags-input
-          id="tags"
-          v-model="tags"
-          name="tags"
-          autocomplete="off"
-        />
+        <slot />
       </fieldset>
 
       <button

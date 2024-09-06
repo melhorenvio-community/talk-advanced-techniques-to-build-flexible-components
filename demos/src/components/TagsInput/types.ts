@@ -12,13 +12,22 @@ export interface TagsModel {
   text: string;
 }
 
-export interface TagsInputModel {
-  tags: TagsModel[];
-};
-
 export interface TagsProps {
   layout?: Layout;
   theme?: Theme;
   icon?: FunctionalComponent;
   iconPosition?: IconPosition;
 };
+
+export interface TagsInputModel {
+  tags: TagsModel[];
+};
+
+export interface TagsInputBindings {
+  value: string;
+}
+
+export interface TagsInputListeners {
+  input: (e: Event) => void;
+  keydown: (e: KeyboardEvent) => void;
+}

@@ -1,9 +1,9 @@
 ---
 theme: dracula
-title: "Vue.js: Técnicas avançadas para desenvolver componentes reutilizáveis"
+title: "Vue.js: Técnicas avançadas para o desenvolvimento de componentes reutilizáveis"
 author: Leonardo Adamoli e Breno Pereira
-keywords: css,trending,dev,guide
-exportFilename: modern-css-a-practical-guide-exported
+keywords: vue,components,scoped-slots,dev,guide
+exportFilename: advanced-techniques-to-build-flexible-components-exported
 class: text-center
 transition: slide-left
 hideInToc: true
@@ -11,15 +11,13 @@ hideInToc: true
 
 <!-- Intro -->
 <section>
-  <h1 class="section-title" v-motion-slide-right>
-    Vue.js
-  </h1>
-
-  <small 
-    class="inline-flex items-end gap-2 text-green" v-motion-slide-left>
-    <i>Técnicas avançadas para desenvolver componentes reutilizáveis</i>
-    <fluent-emoji-hammer-and-wrench class="w-[30px] h-[30px]" />
-  </small>
+  <figure v-motion-slide-right>
+    <img class="w-64 mx-auto" src="https://www.cdnlogo.com/logos/v/92/vue-js.svg" />
+    <caption class="inline-flex items-end gap-2 text-sm" v-motion-slide-left>
+      Técnicas avançadas para o desenvolvimento de componentes reutilizáveis
+      <fluent-emoji-hammer-and-wrench class="w-6 h-6" />
+    </caption>
+  </figure>
 </section>
 
 <!-- Toc -->
@@ -32,39 +30,34 @@ src: ./pages/summary.md
 src: ./pages/topics/01-group-presentation.md
 ---
 
-<!-- Real problems demonstration -->
+<!-- Use case -->
 ---
-src: ./pages/topics/02-real-problems.md
+src: ./pages/topics/02-use-case.md
 ---
 
-<!-- Styles management -->
+<!-- Customization -->
 ---
-src: ./pages/topics/03-styles-management.md
+src: ./pages/topics/03-customization.md
 ---
 
 <!-- Behavior management -->
 ---
-src: ./pages/topics/04-behavior-management.md
+src: ./pages/topics/04-regular-slots.md
 ---
 
 <!-- Low-end component -->
 ---
-src: ./pages/topics/05-low-end-component.md
+src: ./pages/topics/05-scoped-slots.md
 ---
 
-<!-- Low-end component solutions -->
+<!-- Renderless components-->
 ---
-src: ./pages/topics/06-low-end-component-solutions.md
+src: ./pages/topics/06-renderless-components.md
 ---
 
 <!-- Mid-end component -->
 ---
-src: ./pages/topics/07-mid-end-component.md
----
-
-<!-- High-end component -->
----
-src: ./pages/topics/08-high-end-component.md
+src: ./pages/topics/07-wrapper-components.md
 ---
 
 <!-- References -->

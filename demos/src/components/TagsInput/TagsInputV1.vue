@@ -12,7 +12,8 @@ defineOptions({
   inheritAttrs: false,
 });
 
-const props = withDefaults(defineProps<TagsProps>(), {
+// REACTIVE
+const props: TagsProps = withDefaults(defineProps<TagsProps>(), {
   layout: 'inner',
   theme: 'dark',
   icon: CloseFill,
@@ -21,12 +22,13 @@ const props = withDefaults(defineProps<TagsProps>(), {
 
 const tags = defineModel<TagsModel[]>();
 
-const newTag = ref('');
+const newTag = ref<string>('');
 
-const placeholder = computed(() => tags.value?.length ? '' : 'Type a tag name...');
+const placeholder = computed(() => newTag.value ? '' : 'Type a tag name...');
 
 const themeClasses = computed(() => props.theme === 'dark' ? 'bg-purple-400 text-white' : 'bg-purple-200 text-purple-400');
 
+// METHODS
 function addTag(text: string): void {
   const tagAlreadyExists = tags.value?.find(tag => tag.text === text);
 
@@ -98,26 +100,20 @@ function removeTag(id?: string): void {
       </span>
     </transition-group>
 
-    <label
-      :for="($attrs.id as string)"
-      class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
-    >
+    <div class="w-full flex items-center flex-wrap gap-2 p-2 border-2">
       <input
         v-model="newTag"
         v-bind="$attrs"
         :placeholder
-        class="w-auto h-8 outline-none"
+        class="w-auto h-8 grow outline-none"
         @keydown.backspace="removeTag()"
         @keydown.enter.prevent="addTag(newTag)"
       >
-    </label>
+    </div>
   </template>
 
   <template v-else-if="props.layout === 'inner'">
-    <label
-      :for="($attrs.id as string)"
-      class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
-    >
+    <div class="w-full flex items-center flex-wrap gap-2 p-2 border-2">
       <transition-group
         v-if="tags?.length"
         name="fade"
@@ -159,27 +155,24 @@ function removeTag(id?: string): void {
         v-model="newTag"
         v-bind="$attrs"
         :placeholder
-        class="w-auto h-8 outline-none"
+        class="w-auto h-8 grow outline-none"
         @keydown.backspace="removeTag()"
         @keydown.enter.prevent="addTag(newTag)"
       >
-    </label>
+    </div>
   </template>
 
   <template v-else>
-    <label
-      :for="($attrs.id as string)"
-      class="w-full flex items-center flex-wrap gap-2 p-2 border-2 cursor-pointer"
-    >
+    <div class="w-full flex items-center flex-wrap gap-2 p-2 border-2">
       <input
         v-model="newTag"
         v-bind="$attrs"
         :placeholder
-        class="w-auto h-8 outline-none"
+        class="w-auto h-8 grow outline-none"
         @keydown.backspace="removeTag()"
         @keydown.enter.prevent="addTag(newTag)"
       >
-    </label>
+    </div>
 
     <transition-group
       v-if="tags?.length"
