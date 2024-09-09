@@ -15,9 +15,12 @@ defineOptions({
 
 const tags = defineModel<TagsModel[]>();
 
+const attrs = useAttrs();
+
 const newTag = ref<string>('');
 
 const inputBindings = reactive<TagsInputBindings>({
+  ...attrs,
   value: newTag.value,
 });
 

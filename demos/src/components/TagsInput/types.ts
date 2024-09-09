@@ -1,5 +1,5 @@
 // TYPES
-import type { FunctionalComponent } from 'vue';
+import type { FunctionalComponent, HTMLAttributes } from 'vue';
 
 export type Layout = 'top' | 'inner' | 'bottom';
 
@@ -23,7 +23,7 @@ export interface TagsInputModel {
   tags: TagsModel[];
 };
 
-export interface TagsInputBindings {
+export interface TagsInputBindings extends HTMLAttributes {
   value: string;
 }
 

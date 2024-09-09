@@ -13,12 +13,7 @@ const tags = ref<TagsModel[]>([]);
     <demo-heading />
 
     <new-discussion-form>
-      <tags-input-v2
-        id="tags"
-        v-model="tags"
-        name="tags"
-        autocomplete="off"
-      >
+      <tags-input-v2 v-model="tags">
         <template
           #tag="{
             tag,
@@ -46,8 +41,11 @@ const tags = ref<TagsModel[]>([]);
           }"
         >
           <input
-            class="w-auto h-8 grow outline-none"
+            id="tags"
+            name="tags"
+            autocomplete="off"
             placeholder="Type something new..."
+            class="w-auto h-8 grow outline-none"
             :value="newTag"
             @input="onInput"
             @keydown.backspace="removeTag()"

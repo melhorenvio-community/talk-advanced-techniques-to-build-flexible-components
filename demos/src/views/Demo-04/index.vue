@@ -12,9 +12,21 @@ const tagsStackedModel = ref<TagsModel[]>([]);
     <demo-heading />
 
     <new-discussion-form>
-      <tags-input-inline v-model="tagsInlineModel" />
+      <tags-input-inline
+        id="tags"
+        v-model="tagsInlineModel"
+        name="tags"
+        autocomplete="off"
+        placeholder="Tags will be displayed inline..."
+      />
 
-      <tags-input-stacked v-model="tagsStackedModel" />
+      <tags-input-stacked
+        id="tags"
+        v-model="tagsStackedModel"
+        name="tags"
+        autocomplete="off"
+        placeholder="Tags will be displayed stacked..."
+      />
     </new-discussion-form>
   </div>
 </template>

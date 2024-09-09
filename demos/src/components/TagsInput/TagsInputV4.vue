@@ -23,12 +23,13 @@ export default defineComponent({
     'update:modelValue',
   ],
 
-  setup(_, { slots, emit }) {
+  setup(_, { slots, attrs, emit }) {
     const tags = ref<TagsModel[]>([]);
 
     const newTag = ref<string>('');
 
     const inputBindings = reactive<TagsInputBindings>({
+      ...attrs,
       value: newTag.value,
     });
 
