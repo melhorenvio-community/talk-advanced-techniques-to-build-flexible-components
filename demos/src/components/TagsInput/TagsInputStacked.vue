@@ -9,12 +9,7 @@ const tagsModel = defineModel<TagsModel[]>();
 </script>
 
 <template>
-  <tags-input-v4
-    id="tags"
-    v-model="tagsModel"
-    name="tags"
-    autocomplete="off"
-  >
+  <tags-input-v4 v-model="tagsModel">
     <template
       #default="{
         tags,
@@ -26,7 +21,6 @@ const tagsModel = defineModel<TagsModel[]>();
       <div class="w-full flex flex-col gap-2">
         <input
           class="w-full p-3 border-2 outline-none"
-          placeholder="Tags will be displayed stacked..."
           v-bind="inputBindings"
           v-on="inputListeners"
         >

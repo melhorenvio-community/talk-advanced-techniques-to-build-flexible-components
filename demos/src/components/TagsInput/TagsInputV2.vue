@@ -5,10 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 // TYPES
 import type { TagsModel } from '@components/TagsInput/types';
 
-defineOptions({
-  inheritAttrs: false,
-});
-
 const tags = defineModel<TagsModel[]>();
 
 const newTag = ref<string>('');

@@ -18,6 +18,7 @@ const tags = ref<TagsModel[]>([]);
         v-model="tags"
         name="tags"
         autocomplete="off"
+        placeholder="Type something new..."
       >
         <template
           #tag="{
@@ -40,7 +41,6 @@ const tags = ref<TagsModel[]>([]);
         <template #input="{ bindings, listeners }">
           <input
             class="w-auto h-8 grow outline-none"
-            placeholder="Type something new..."
             v-bind="bindings"
             v-on="listeners"
           >

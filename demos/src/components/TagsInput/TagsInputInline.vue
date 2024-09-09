@@ -9,12 +9,7 @@ const tagsModel = defineModel<TagsModel[]>();
 </script>
 
 <template>
-  <tags-input-v4
-    id="tags"
-    v-model="tagsModel"
-    name="tags"
-    autocomplete="off"
-  >
+  <tags-input-v4 v-model="tagsModel">
     <template
       #default="{
         tags,
@@ -49,7 +44,6 @@ const tagsModel = defineModel<TagsModel[]>();
 
         <input
           class="w-auto h-8 grow outline-none"
-          placeholder="Tags will be displayed inline..."
           v-bind="inputBindings"
           v-on="inputListeners"
         >
