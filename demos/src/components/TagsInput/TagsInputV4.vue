@@ -3,6 +3,7 @@ import { Fragment } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
+import type { PropType } from 'vue';
 import type {
   TagsInputBindings,
   TagsInputListeners,
@@ -17,6 +18,13 @@ export default defineComponent({
   model: {
     prop: 'modelValue',
     event: 'update:modelValue',
+  },
+
+  props: {
+    modelValue: {
+      type: Array as PropType<TagsModel[]>,
+      required: true,
+    },
   },
 
   emits: [
