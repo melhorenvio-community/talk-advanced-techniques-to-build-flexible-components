@@ -5,7 +5,9 @@ import type { TagsModel } from '@components/TagsInput/types';
 // COMPONENTS
 import Trash from '~icons/iconamoon/trash';
 
-const tagsModel = defineModel<TagsModel[]>();
+const tagsModel = defineModel<TagsModel[]>({
+  default: [],
+});
 </script>
 
 <template>
