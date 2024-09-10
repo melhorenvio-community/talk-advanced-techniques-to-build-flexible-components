@@ -125,7 +125,7 @@ hideInToc: true
 # E ainda pode piorar...
 
 - Até o momento falamos apenas de customizações visuais...
-- E quando às customizações **comportamentais**? <noto-bomb class="w-6 h-6" />
+- E quanto às customizações **comportamentais**? <noto-bomb class="w-6 h-6" />
 
 <br>
 
