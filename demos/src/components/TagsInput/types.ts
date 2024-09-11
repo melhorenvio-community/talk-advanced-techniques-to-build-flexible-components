@@ -1,5 +1,5 @@
 // TYPES
-import type { FunctionalComponent, HTMLAttributes } from 'vue';
+import type { FunctionalComponent } from 'vue';
 
 export type Layout = 'top' | 'inner' | 'bottom';
 
@@ -22,10 +22,6 @@ export interface TagsProps {
 export interface TagsInputModel {
   tags: TagsModel[];
 };
-
-export interface TagsInputBindings extends HTMLAttributes {
-  value: string;
-}
 
 export interface TagsInputListeners {
   input: (e: Event) => void;
