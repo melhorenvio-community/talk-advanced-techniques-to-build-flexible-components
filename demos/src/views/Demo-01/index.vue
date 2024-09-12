@@ -2,6 +2,8 @@
 // TYPES
 import type { TagsModel } from '@components/TagsInput/types';
 
+// import Trash from '~icons/iconamoon/trash';
+
 const tags = ref<TagsModel[]>([]);
 </script>
 

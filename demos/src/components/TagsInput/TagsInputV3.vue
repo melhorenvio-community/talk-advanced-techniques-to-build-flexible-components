@@ -3,8 +3,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 // TYPES
+import type { InputHTMLAttributes } from 'vue';
 import type {
-  TagsInputBindings,
   TagsInputListeners,
   TagsModel,
 } from '@components/TagsInput/types';
@@ -19,7 +19,7 @@ const attrs = useAttrs();
 
 const newTag = ref<string>('');
 
-const inputBindings = reactive<TagsInputBindings>({
+const inputBindings = reactive<InputHTMLAttributes>({
   ...attrs,
   value: newTag.value,
 });
